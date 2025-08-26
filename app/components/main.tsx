@@ -10,7 +10,7 @@ const services = [
     title: 'IDENTIDADE VISUAL MENSAL',
     description:
       'A identidade visual é algo que fica muito mais harmonioso quando é bem planejada, e que tal uma ajuda com isso?',
-    image: '/identidade.png',
+    image: '/Identidade.png',
     color: 'bg-orange-500',
     link: 'https://hotmart.com/pt-br/marketplace/produtos/identidade-visual-mensal/T100074281B?off=4xkb796a',
   },
@@ -46,7 +46,7 @@ const services = [
     id: 5,
     title: 'ROTEIRO E ORGANIZAÇÃO DE CULTO',
     description: 'Designs personalizados para sua igreja todo mês',
-    image: '/identidaderoteiro.png',
+    image: '/Identidaderoteiro.png',
     color: 'bg-gray-400',
     link: 'https://hotmart.com/pt-br/marketplace/produtos/roteiro-de-organizacao-de-culto/S96063596M',
   },
