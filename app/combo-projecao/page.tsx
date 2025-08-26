@@ -418,7 +418,8 @@ const ComboProjecaoPage = () => {
                       MAIS DE 500 ALUNOS SATISFEITOS
                     </p>
                     <p className="text-sm text-yellow-200">
-                      "Transformou completamente nossa projeção!" - João Silva
+                      "Que aula maravilhosa. Simples, mas riquissíma em
+                      conteúdo. Vou aplicar! " - João Silva
                     </p>
                   </div>
                 </div>
