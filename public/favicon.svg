@@ -1,0 +1,29 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E293B;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#334155;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F172A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60A5FA;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#A78BFA;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Rounded rectangle background -->
+  <rect x="1" y="1" width="30" height="30" rx="12" fill="url(#bgGradient)" stroke="url(#accentGradient)" stroke-width="1"/>
+  
+  <!-- Modern initials typography -->
+  <text x="10" y="20" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="2">S</text>
+  <text x="16" y="20" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="12" font-weight="300" letter-spacing="2">Z</text>
+  <text x="22" y="20" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="2">S</text>
+  
+  <!-- Modern accent elements -->
+  <circle cx="24" cy="8" r="1.5" fill="#F59E0B" opacity="0.8"/>
+  <circle cx="8" cy="24" r="1" fill="#60A5FA" opacity="0.6"/>
+  
+  <!-- Subtle border accent -->
+  <rect x="1" y="1" width="30" height="30" rx="12" fill="none" stroke="#FFFFFF" stroke-width="0.5" opacity="0.1"/>
+</svg>
