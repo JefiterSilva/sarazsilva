@@ -1,39 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://sarazsilva.com/sitemap.xml
+# Host
+Host: https://sara-silva-landing.vercel.app
 
-# Crawl-delay
-Crawl-delay: 1
-
-# Disallow admin areas (if any)
-Disallow: /admin/
-Disallow: /api/
-Disallow: /_next/
-Disallow: /static/
-
-# Allow important pages
-Allow: /combo-projecao
-Allow: /about
-Allow: /cursos
-
-# Google specific
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-# Bing specific
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-# Social media bots
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
+# Sitemaps
+Sitemap: https://sara-silva-landing.vercel.app/sitemap.xml
