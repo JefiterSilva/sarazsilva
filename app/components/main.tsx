@@ -60,6 +60,7 @@ const services = [
   },
 ];
 
+// Deploy automático configurado - teste
 const Main = () => {
   return (
     <main className="container mx-auto px-4 pb-12">
