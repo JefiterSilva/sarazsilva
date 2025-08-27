@@ -9,13 +9,7 @@
       "destination": "/$1"
     }
   ],
-  "redirects": [
-    {
-      "source": "https://www.sarazs.com.br/(.*)",
-      "destination": "https://sarazs.com.br/$1",
-      "permanent": true
-    }
-  ],
+ 
   "headers": [
     {
       "source": "/(.*)",
