@@ -545,27 +545,14 @@ const ComboProjecaoPage = () => {
 
                 <div className="space-y-3">
                   <h3 className="mb-4 text-xl font-bold text-white">
-                    🎁 Bônus Exclusivos do Combo:
+                    🎁 Exclusivos do Combo:
                   </h3>
                   <ul className="space-y-3">
                     <li className="flex items-start space-x-3">
                       <Star className="mt-0.5 h-5 w-5 flex-shrink-0 text-yellow-400" />
-                      <span className="text-blue-100">
-                        Suporte VIP prioritário
-                      </span>
+                      <span className="text-blue-100">Suporte direto.</span>
                     </li>
-                    <li className="flex items-start space-x-3">
-                      <Star className="mt-0.5 h-5 w-5 flex-shrink-0 text-yellow-400" />
-                      <span className="text-green-100">
-                        Templates prontos para uso
-                      </span>
-                    </li>
-                    <li className="flex items-start space-x-3">
-                      <Star className="mt-0.5 h-5 w-5 flex-shrink-0 text-yellow-400" />
-                      <span className="text-blue-100">
-                        Comunidade exclusiva
-                      </span>
-                    </li>
+
                     <li className="flex items-start space-x-3">
                       <Star className="mt-0.5 h-5 w-5 flex-shrink-0 text-yellow-400" />
                       <span className="text-green-100">
@@ -588,24 +575,6 @@ const ComboProjecaoPage = () => {
                     </p>
                     <p className="text-sm text-yellow-200">
                       COMPRE O COMBO: R$ 84,00 (Economia de R$ 84,00!)
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Social proof */}
-              <div className="rounded-xl border border-green-400/30 bg-green-500/20 p-4">
-                <div className="flex items-center space-x-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500">
-                    <Star className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-white">
-                      MAIS DE 1.200 ALUNOS SATISFEITOS
-                    </p>
-                    <p className="text-sm text-green-200">
-                      "O combo transformou nossa igreja! Agora temos projeção
-                      profissional!" - Maria Santos
                     </p>
                   </div>
                 </div>
