@@ -89,17 +89,19 @@ const Main = () => {
                         {service.promotion ? (
                           <div className="text-center">
                             <div className="text-xs font-bold">PROMOÇÃO</div>
-                            <div className="text-xs">
-                              De R${' '}
-                              {service.promotion.originalPrice
-                                .toFixed(2)
-                                .replace('.', ',')}
-                            </div>
-                            <div className="text-xs font-bold">
-                              Por R${' '}
-                              {service.promotion.promotionalPrice
-                                .toFixed(2)
-                                .replace('.', ',')}
+                            <div className="flex items-center justify-center gap-1 text-xs">
+                              <span>
+                                De R${' '}
+                                {service.promotion.originalPrice
+                                  .toFixed(2)
+                                  .replace('.', ',')}
+                              </span>
+                              <span className="font-bold">
+                                Por R${' '}
+                                {service.promotion.promotionalPrice
+                                  .toFixed(2)
+                                  .replace('.', ',')}
+                              </span>
                             </div>
                             <div className="text-xs">
                               {service.promotion.endDate}
