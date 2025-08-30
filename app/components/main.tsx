@@ -22,6 +22,11 @@ const services = [
     image: '/PACKFUNDOS2.png',
     color: 'bg-blue-400',
     popular: true,
+    promotion: {
+      originalPrice: 55.0,
+      promotionalPrice: 24.9,
+      endDate: 'Fim de mês',
+    },
     link: 'https://hotmart.com/pt-br/marketplace/produtos/pack-fundos-ii/J98412461Y',
   },
   {
@@ -78,8 +83,31 @@ const Main = () => {
                     className="relative h-auto w-full justify-start p-6 text-left hover:bg-gray-50"
                   >
                     {service.popular && (
-                      <Badge className="absolute -right-2 -top-2 bg-red-500 hover:bg-red-600">
-                        Popular
+                      <Badge
+                        className={`absolute -right-2 -top-2 bg-red-500 hover:bg-red-600 ${service.promotion ? 'min-w-[120px] p-2' : ''}`}
+                      >
+                        {service.promotion ? (
+                          <div className="text-center">
+                            <div className="text-xs font-bold">PROMOÇÃO</div>
+                            <div className="text-xs">
+                              De R${' '}
+                              {service.promotion.originalPrice
+                                .toFixed(2)
+                                .replace('.', ',')}
+                            </div>
+                            <div className="text-xs font-bold">
+                              Por R${' '}
+                              {service.promotion.promotionalPrice
+                                .toFixed(2)
+                                .replace('.', ',')}
+                            </div>
+                            <div className="text-xs">
+                              {service.promotion.endDate}
+                            </div>
+                          </div>
+                        ) : (
+                          'Popular'
+                        )}
                       </Badge>
                     )}
 
@@ -93,8 +121,7 @@ const Main = () => {
                           alt={service.title}
                           width={124}
                           height={124}
-                          className="rounded-xl"
-                          objectFit="fill"
+                          className="rounded-xl object-fill"
                         />
                       </div>
 

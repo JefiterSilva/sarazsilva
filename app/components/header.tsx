@@ -27,7 +27,7 @@ const Header = () => {
             <div className="group relative">
               <div className="relative h-24 w-24 overflow-hidden rounded-full border-4 border-white/20 shadow-2xl transition-all duration-500 group-hover:scale-105 sm:h-28 sm:w-28 md:h-32 md:w-32 lg:h-40 lg:w-40">
                 <Image
-                  src="/perfil.jpg?height=160&width=160"
+                  src="/perfil.jpg"
                   alt="Sara Silva - Especialista em Projeção"
                   width={160}
                   height={160}
