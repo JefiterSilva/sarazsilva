@@ -395,33 +395,17 @@ const ComboProjecaoPage = () => {
                     </li>
                     <li className="flex items-start space-x-3">
                       <Star className="mt-0.5 h-5 w-5 flex-shrink-0 text-yellow-400" />
-                      <span className="text-green-100">Templates prontos</span>
+                      <span className="text-green-100">
+                        Biblia bilingue e versões
+                      </span>
                     </li>
                     <li className="flex items-start space-x-3">
                       <Star className="mt-0.5 h-5 w-5 flex-shrink-0 text-yellow-400" />
                       <span className="text-green-100">
-                        Comunidade exclusiva
+                        utilizando o aplicativo no celular
                       </span>
                     </li>
                   </ul>
-                </div>
-              </div>
-
-              {/* Social proof */}
-              <div className="rounded-xl border border-yellow-400/30 bg-yellow-500/20 p-4">
-                <div className="flex items-center space-x-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-yellow-500">
-                    <Star className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-white">
-                      MAIS DE 500 ALUNOS SATISFEITOS
-                    </p>
-                    <p className="text-sm text-yellow-200">
-                      "Que aula maravilhosa. Simples, mas riquissíma em
-                      conteúdo. Vou aplicar! " - João Silva
-                    </p>
-                  </div>
                 </div>
               </div>
 
