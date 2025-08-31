@@ -15,8 +15,10 @@ import { useEffect, useState } from 'react';
 
 export default function PromoDrawerModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     // Abre o drawer automaticamente após 1 segundo
     const timer = setTimeout(() => {
       setIsOpen(true);
@@ -24,6 +26,11 @@ export default function PromoDrawerModal() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  // Não renderiza nada até o componente estar montado
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <Drawer open={isOpen} onOpenChange={setIsOpen}>
