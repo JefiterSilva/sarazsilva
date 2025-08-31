@@ -3,7 +3,7 @@ import BestSellerCard from './components/best-seller-card';
 import Footer from './components/footer';
 import Header from './components/header';
 import Main from './components/main';
-import PromoDrawerModal from './components/promo-drawer-modal';
+import PromoModal from './components/promo-modal';
 
 export default function LandingPage() {
   return (
@@ -15,7 +15,7 @@ export default function LandingPage() {
 
       {/* Conteúdo principal */}
       <div id="main-content">
-        <PromoDrawerModal />
+        <PromoModal />
         <BestSellerCard />
         <About />
         <Main />
