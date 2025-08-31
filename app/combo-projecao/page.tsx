@@ -362,13 +362,13 @@ const ComboProjecaoPage = () => {
                     <li className="flex items-start space-x-3">
                       <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-400" />
                       <span className="text-green-100">
-                        Bíblia multilíngue e fundos
+                        Bíblia bilíngue e versões
                       </span>
                     </li>
                     <li className="flex items-start space-x-3">
                       <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-400" />
                       <span className="text-green-100">
-                        Aplicativo móvel para projeção
+                        Utilizando o aplicativo no celular
                       </span>
                     </li>
                     <li className="flex items-start space-x-3">
@@ -391,18 +391,12 @@ const ComboProjecaoPage = () => {
                     </li>
                     <li className="flex items-start space-x-3">
                       <Star className="mt-0.5 h-5 w-5 flex-shrink-0 text-yellow-400" />
-                      <span className="text-green-100">Suporte VIP direto</span>
+                      <span className="text-green-100">Suporte direto</span>
                     </li>
                     <li className="flex items-start space-x-3">
                       <Star className="mt-0.5 h-5 w-5 flex-shrink-0 text-yellow-400" />
                       <span className="text-green-100">
-                        Biblia bilingue e versões
-                      </span>
-                    </li>
-                    <li className="flex items-start space-x-3">
-                      <Star className="mt-0.5 h-5 w-5 flex-shrink-0 text-yellow-400" />
-                      <span className="text-green-100">
-                        utilizando o aplicativo no celular
+                        Certificado de conclusão
                       </span>
                     </li>
                   </ul>

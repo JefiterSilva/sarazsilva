@@ -84,28 +84,13 @@ const Main = () => {
                   >
                     {service.popular && (
                       <Badge
-                        className={`absolute -right-2 -top-2 bg-red-500 hover:bg-red-600 ${service.promotion ? 'min-w-[120px] p-2' : ''}`}
+                        className={`absolute -right-2 -top-2 bg-gradient-to-r from-red-600 to-orange-500 shadow-lg animate-pulse hover:animate-none hover:from-orange-500 hover:to-red-600 ${service.promotion ? 'min-w-[180px] p-2 font-bold tracking-tight' : ''}`}
                       >
                         {service.promotion ? (
-                          <div className="text-center">
-                            <div className="text-xs font-bold">PROMOÇÃO</div>
-                            <div className="flex items-center justify-center gap-1 text-xs">
-                              <span>
-                                De R${' '}
-                                {service.promotion.originalPrice
-                                  .toFixed(2)
-                                  .replace('.', ',')}
-                              </span>
-                              <span className="font-bold">
-                                Por R${' '}
-                                {service.promotion.promotionalPrice
-                                  .toFixed(2)
-                                  .replace('.', ',')}
-                              </span>
-                            </div>
-                            <div className="text-xs">
-                              {service.promotion.endDate}
-                            </div>
+                          <div className="flex items-center justify-center gap-2 text-white">
+                            <span className="text-xs uppercase">PROMOÇÃO:</span>
+                            <span className="text-xs line-through opacity-80">R${service.promotion.originalPrice.toFixed(2).replace('.', ',')}</span>
+                            <span className="text-sm font-extrabold">R${service.promotion.promotionalPrice.toFixed(2).replace('.', ',')}!</span>
                           </div>
                         ) : (
                           'Popular'
