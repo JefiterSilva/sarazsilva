@@ -21,7 +21,7 @@ const services = [
       'Um pacote de fundos específicos para utilizar na projeção da sua igreja.',
     image: '/PACKFUNDOS2.png',
     color: 'bg-blue-400',
-    popular: true,
+    popular: false,
     promotion: {
       originalPrice: 55.0,
       promotionalPrice: 24.9,
@@ -84,13 +84,24 @@ const Main = () => {
                   >
                     {service.popular && (
                       <Badge
-                        className={`absolute -right-2 -top-2 bg-gradient-to-r from-red-600 to-orange-500 shadow-lg animate-pulse hover:animate-none hover:from-orange-500 hover:to-red-600 ${service.promotion ? 'min-w-[180px] p-2 font-bold tracking-tight' : ''}`}
+                        className={`absolute -right-2 -top-2 animate-pulse bg-gradient-to-r from-red-600 to-orange-500 shadow-lg hover:animate-none hover:from-orange-500 hover:to-red-600 ${service.promotion ? 'min-w-[180px] p-2 font-bold tracking-tight' : ''}`}
                       >
                         {service.promotion ? (
                           <div className="flex items-center justify-center gap-2 text-white">
                             <span className="text-xs uppercase">PROMOÇÃO:</span>
-                            <span className="text-xs line-through opacity-80">R${service.promotion.originalPrice.toFixed(2).replace('.', ',')}</span>
-                            <span className="text-sm font-extrabold">R${service.promotion.promotionalPrice.toFixed(2).replace('.', ',')}!</span>
+                            <span className="text-xs line-through opacity-80">
+                              R$
+                              {service.promotion.originalPrice
+                                .toFixed(2)
+                                .replace('.', ',')}
+                            </span>
+                            <span className="text-sm font-extrabold">
+                              R$
+                              {service.promotion.promotionalPrice
+                                .toFixed(2)
+                                .replace('.', ',')}
+                              !
+                            </span>
                           </div>
                         ) : (
                           'Popular'
