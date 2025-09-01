@@ -21,7 +21,7 @@ const services = [
       'Um pacote de fundos específicos para utilizar na projeção da sua igreja.',
     image: '/PACKFUNDOS2.png',
     color: 'bg-blue-400',
-    popular: false,
+    popular: true,
     promotion: {
       originalPrice: 55.0,
       promotionalPrice: 24.9,
