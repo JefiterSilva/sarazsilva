@@ -31,6 +31,21 @@ const services = [
   },
   {
     id: 3,
+    title: 'FUNDOS PARA PROJEÇÃO',
+    description:
+      'Fundos de Projeção é a primeira versão de backgrounds. Contém 40 fundos estaticos e dinamicos incluindo algumas frases de músicas como É ELE, Bondade de Deus e Santo pra Sempre.',
+    image: '/fundos_pro.png',
+    color: 'bg-purple-400',
+    popular: false,
+    promotion: {
+      originalPrice: 55.0,
+      promotionalPrice: 24.9,
+      endDate: 'Fim de mês',
+    },
+    link: 'https://pay.hotmart.com/R95452686V?bid=1728743323750',
+  },
+  {
+    id: 4,
     title: 'PACOTE CRIATIVO',
     description:
       'Chegou a segunda edição dos Materiais Criativos e agora com mais artes para eventos e cultos especiais.',
@@ -39,7 +54,7 @@ const services = [
     link: 'https://hotmart.com/pt-br/marketplace/produtos/hagsxd-pacote-criativo-wbsra/W96708239C',
   },
   {
-    id: 4,
+    id: 5,
     title: 'CAPACITAÇÃO PARA MIDIA E COMUNICAÇÃO',
     description:
       'Essa imersão contém aulas práticas com conteúdos exclusivos para equipe de mídia e comunicação das igrejas.',
@@ -48,7 +63,7 @@ const services = [
     link: 'https://hotmart.com/pt-br/marketplace/produtos/capacitacao-imersao-midia-para-igrejas/P93420727E',
   },
   {
-    id: 5,
+    id: 6,
     title: 'ROTEIRO E ORGANIZAÇÃO DE CULTO',
     description: 'Designs personalizados para sua igreja todo mês',
     image: '/Identidaderoteiro.png',
@@ -56,7 +71,7 @@ const services = [
     link: 'https://hotmart.com/pt-br/marketplace/produtos/roteiro-de-organizacao-de-culto/S96063596M',
   },
   {
-    id: 6,
+    id: 7,
     title: 'Materiais Criativos',
     description: 'Orientação completa para estruturar a mídia da sua igreja',
     image: '/criativo.jpg',
