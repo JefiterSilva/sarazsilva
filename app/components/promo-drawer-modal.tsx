@@ -113,7 +113,7 @@ export default function PromoDrawerModal() {
                     />
                   </svg>
                   <span className="leading-tight">
-                    Mais de 50 fundos em alta resolução
+                    Mais de 150 fundos em alta resolução
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
