@@ -65,7 +65,8 @@ const services = [
   {
     id: 6,
     title: 'ROTEIRO E ORGANIZAÇÃO DE CULTO',
-    description: 'Designs personalizados para sua igreja todo mês',
+    description:
+      'Ferramentas para ajudar na organização e planejamento de cultos e eventos da igreja.',
     image: '/Identidaderoteiro.png',
     color: 'bg-gray-400',
     link: 'https://hotmart.com/pt-br/marketplace/produtos/roteiro-de-organizacao-de-culto/S96063596M',
@@ -73,7 +74,8 @@ const services = [
   {
     id: 7,
     title: 'Materiais Criativos',
-    description: 'Orientação completa para estruturar a mídia da sua igreja',
+    description:
+      'Materiais prontos para usar na sua igreja como artes, videos de abertura, vídeo de avisos, crachas de voluntários, placas de recepção entre outros.',
     image: '/criativo.jpg',
     color: 'bg-orange-500',
     link: 'https://hotmart.com/pt-br/marketplace/produtos/materiais-criativos/I94921264N',
