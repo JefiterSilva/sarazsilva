@@ -118,7 +118,7 @@ export default function PromoModal() {
                 <Star className="h-3 w-3 text-green-600" />
               </div>
               <span className="text-sm text-gray-700">
-                Mais de 50 fundos em alta resolução
+                Mais de 150 fundos em alta resolução
               </span>
             </div>
             <div className="flex items-center gap-3">
