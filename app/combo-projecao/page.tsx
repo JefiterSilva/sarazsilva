@@ -7,7 +7,7 @@ import Link from 'next/link';
 const ComboProjecaoPage = () => {
   const cursoParte1 = {
     titulo: 'Dominando o Holyrics parte 1',
-    progresso: '2/7 aulas concluídas',
+    progresso: '2/8 aulas concluídas',
     cor: 'blue',
     aulas: [
       {
@@ -165,7 +165,7 @@ const ComboProjecaoPage = () => {
                         {cursoParte1.titulo}
                       </h2>
                       <p className="text-lg text-blue-100">
-                        Do Zero ao Intermediário • 7 Aulas Práticas
+                        Do Zero ao Intermediário • 8 Aulas Práticas
                       </p>
                     </div>
                   </div>
@@ -218,7 +218,7 @@ const ComboProjecaoPage = () => {
                     <li className="flex items-start space-x-3">
                       <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-400" />
                       <span className="text-blue-100">
-                        Fundos em movimento personalizados
+                        Adicionando novas fontes no programa
                       </span>
                     </li>
                     <li className="flex items-start space-x-3">
@@ -315,7 +315,7 @@ const ComboProjecaoPage = () => {
                         {cursoParte2.titulo}
                       </h2>
                       <p className="text-lg text-green-100">
-                        Intermediário ao Avançado • 6 Aulas Especializadas
+                        Intermediário ao Avançado • 8 Aulas Praticas
                       </p>
                     </div>
                   </div>
@@ -374,7 +374,7 @@ const ComboProjecaoPage = () => {
                     <li className="flex items-start space-x-3">
                       <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-400" />
                       <span className="text-green-100">
-                        Automação com gatilhos
+                        Automação com mesa digital Behringer x32
                       </span>
                     </li>
                   </ul>
