@@ -160,7 +160,7 @@ export default function HolyricsUpdatesDrawer() {
                   className="rounded-lg bg-purple-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-purple-600"
                   onClick={() =>
                     window.open(
-                      'https://hotmart.com/pt-br/marketplace/produtos/dominando-o-holyrics-parte-1/Y92556024E',
+                      'https://hotmart.com/pt-br/marketplace/produtos/dominando-o-holyrics-parte-1/Q93610850I',
                       '_blank'
                     )
                   }
@@ -171,7 +171,7 @@ export default function HolyricsUpdatesDrawer() {
                   className="rounded-lg bg-blue-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-600"
                   onClick={() =>
                     window.open(
-                      'https://hotmart.com/pt-br/marketplace/produtos/dominando-o-holyrics-parte-2/N92556024E',
+                      'https://hotmart.com/pt-br/marketplace/produtos/dominando-o-holyrics-parte-2/A94024412O?sck=HOTMART_SITE&search=2042cdc2-7353-42c4-b28c-55373570108e&hotfeature=33',
                       '_blank'
                     )
                   }

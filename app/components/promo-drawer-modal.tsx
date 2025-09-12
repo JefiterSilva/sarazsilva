@@ -83,6 +83,7 @@ export default function PromoDrawerModal() {
               <Link
                 href="https://hotmart.com/pt-br/marketplace/produtos/pack-fundos-ii/J98412461Y"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="w-full"
                 aria-label="Comprar Pack Fundos II por R$24,90"
               >
