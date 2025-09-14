@@ -454,7 +454,7 @@ const ComboProjecaoPage = () => {
                         COMBO COMPLETO HOLYRICS
                       </h2>
                       <p className="text-lg text-blue-100">
-                        Parte 1 + Parte 2 • Do Zero ao Avançado • 13 Aulas
+                        Parte 1 + Parte 2 • Do Zero ao Avançado • 16 Aulas
                       </p>
                     </div>
                   </div>
@@ -495,14 +495,14 @@ const ComboProjecaoPage = () => {
                     <li className="flex items-start space-x-3">
                       <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-400" />
                       <span className="text-blue-100">
-                        <strong>Parte 1:</strong> Básico ao Intermediário (7
+                        <strong>Parte 1:</strong> Básico ao Intermediário (8
                         aulas)
                       </span>
                     </li>
                     <li className="flex items-start space-x-3">
                       <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-400" />
                       <span className="text-green-100">
-                        <strong>Parte 2:</strong> Intermediário ao Avançado (6
+                        <strong>Parte 2:</strong> Intermediário ao Avançado (8
                         aulas)
                       </span>
                     </li>
