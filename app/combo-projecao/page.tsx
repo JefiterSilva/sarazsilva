@@ -635,7 +635,7 @@ const ComboProjecaoPage = () => {
                 <div className="text-3xl font-bold text-white">R$ 84,00</div>
 
                 <ul className="space-y-2 text-sm text-blue-100">
-                  <li>• 13 aulas práticas</li>
+                  <li>• 16 aulas práticas</li>
                   <li>• Acesso vitalício</li>
                   <li>• Suporte direto</li>
                   <li>• Certificado completo</li>
