@@ -1,4 +1,5 @@
 import HolyricsUpdatesDrawer from '@/app/components/holyrics-updates-drawer';
+import ProjecaoCriativaDrawer from '@/app/components/projecao-criativa-drawer';
 import About from './components/about';
 import BestSellerCard from './components/best-seller-card';
 import Footer from './components/footer';
@@ -24,6 +25,7 @@ export default function LandingPage() {
 
       {/* Drawers que abrem automaticamente */}
       <HolyricsUpdatesDrawer />
+      <ProjecaoCriativaDrawer />
     </div>
   );
 }
