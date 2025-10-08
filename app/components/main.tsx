@@ -80,6 +80,15 @@ const services = [
     color: 'bg-orange-500',
     link: 'https://hotmart.com/pt-br/marketplace/produtos/materiais-criativos/I94921264N',
   },
+  {
+    id: 8,
+    title: 'PROJEÇÃO CRIATIVA no Canva',
+    description:
+      'Crie fundos com letras personalizadas no Canva para a projeção das múscias da sua igreja.',
+    image: '/Canva.jpg',
+    color: 'bg-purple-300',
+    link: 'https://hotmart.com/pt-br/marketplace/produtos/projecao-criativa-aprendizado-na-pratica/C102196297Y',
+  },
 ];
 
 const Main = () => {

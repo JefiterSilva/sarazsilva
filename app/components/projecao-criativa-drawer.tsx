@@ -1,11 +1,9 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
 import {
   Drawer,
   DrawerContent,
   DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
 } from '@/components/ui/drawer';
@@ -69,7 +67,8 @@ export default function ProjecaoCriativaDrawer() {
               ✨ Projeção Criativa no Canva
             </DrawerTitle>
             <DrawerDescription className="text-sm text-white/90 sm:text-base">
-              Aprenda na prática a criar fundos com letras personalizadas, movimentos e importar no Holyrics.
+              Aprenda na prática a criar fundos com letras personalizadas,
+              movimentos e importar no Holyrics.
             </DrawerDescription>
           </DrawerHeader>
 
@@ -78,7 +77,9 @@ export default function ProjecaoCriativaDrawer() {
             <div className="mb-4 rounded-lg bg-white/10 p-3 backdrop-blur-sm sm:p-4">
               <div className="mb-2 flex items-center gap-2 text-white">
                 <PlayCircle className="h-5 w-5" />
-                <span className="text-sm font-medium">Veja um trecho do curso</span>
+                <span className="text-sm font-medium">
+                  Veja um trecho do curso
+                </span>
               </div>
               <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/20">
                 <video
@@ -97,37 +98,36 @@ export default function ProjecaoCriativaDrawer() {
             {/* Descrição detalhada */}
             <div className="mb-4 rounded-lg bg-white/10 p-4 backdrop-blur-sm">
               <p className="text-sm text-white/90">
-                Crie fundos com letras personalizadas no Canva para a projeção de músicas da sua igreja.
-                Você vai aprender a selecionar o fundo, criar frases com letras personalizadas, adicionar movimento,
-                salvar e importar no Holyrics. Conteúdo compatível com Canva gratuito e Pro.
+                Aqui você vai aprender de forma didática e na prática como
+                selecionar o fundo, criar a frase com letras personalizadas,
+                colocar o movimento, salvar e importar no programa. Tudo isso
+                utilizando o CANVA e o programa do Holyrics para projeção.
+                Conteúdo compatível com Canva gratuito e Pro.
               </p>
             </div>
 
             {/* Call to Action */}
             <div className="pt-2 text-center">
-              <p className="mb-3 text-sm text-white/90">Acesse o curso completo no Hotmart:</p>
-              <div className="flex flex-col justify-center gap-2 sm:flex-row">
-                <Button
-                  asChild
-                  className="bg-[#FF7A00] hover:bg-[#FF8C1A] text-white"
-                >
-                  <a
-                    href="https://hotmart.com/pt-br/marketplace/produtos/projecao-criativa-aprendizado-na-pratica/C102196297Y"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Acessar curso
-                  </a>
-                </Button>
+              <p className="mb-3 text-sm text-white/90">
+                Acesse o curso completo no Hotmart:
+              </p>
+              <div className="mb-3">
+                <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#FF7A00] via-[#FF8C1A] to-[#FFB770] px-4 py-2 text-base font-extrabold text-white shadow-lg ring-2 ring-white/30">
+                  🔥 Preço promocional: R$ 19,90
+                </span>
               </div>
+              <div className="flex flex-col justify-center gap-2 sm:flex-row">
+                <a
+                  href="https://hotmart.com/pt-br/marketplace/produtos/projecao-criativa-aprendizado-na-pratica/C102196297Y"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-md bg-[#FF7A00] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#FF8C1A]"
+                >
+                  Acessar curso
+                </a>
+              </div>
+            </div>
           </div>
-          </div>
-
-          <DrawerFooter className="px-3 text-center sm:px-4 md:px-6">
-            <p className="w-full text-center text-xs text-white/70 sm:text-sm">
-              Conteúdo exclusivo para alunos matriculados
-            </p>
-          </DrawerFooter>
         </div>
       </DrawerContent>
     </Drawer>

@@ -1,4 +1,3 @@
-import HolyricsUpdatesDrawer from '@/app/components/holyrics-updates-drawer';
 import ProjecaoCriativaDrawer from '@/app/components/projecao-criativa-drawer';
 import About from './components/about';
 import BestSellerCard from './components/best-seller-card';
@@ -9,7 +8,7 @@ import Main from './components/main';
 
 export default function LandingPage() {
   return (
-    <div className="bg-gradient-to-br from-slate-50 to-slate-100 overflow-hidden">
+    <div className="overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100">
       {/* Header em tela inteira */}
       <section className="h-screen">
         <Header />
@@ -24,7 +23,7 @@ export default function LandingPage() {
       </div>
 
       {/* Drawers que abrem automaticamente */}
-      <HolyricsUpdatesDrawer />
+
       <ProjecaoCriativaDrawer />
     </div>
   );
