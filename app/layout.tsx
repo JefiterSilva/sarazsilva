@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
+import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Mulish } from 'next/font/google';
 import GoogleAnalytics from './components/google-analytics';
 import './globals.css';
-import { Analytics } from '@vercel/analytics/next';
 
 const mulish = Mulish({
   subsets: ['latin'],
@@ -236,7 +236,7 @@ export default function RootLayout({
       </head>
       <body className={`${mulish.className}`}>
         {children}
-        <Analytics/>
+        <Analytics />
         <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_ID} />
         <SpeedInsights />
       </body>
