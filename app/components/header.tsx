@@ -79,7 +79,7 @@ const Header = () => {
                   </div>
                 </div>
                 <div className="text-lg font-bold text-white md:text-2xl">
-                  900+
+                  1200+
                 </div>
                 <div className="text-xs text-gray-300 md:text-sm">
                   Igrejas antedidas com o Pack de Fundos
