@@ -1,11 +1,10 @@
 import About from './components/about';
 import BestSellerCard from './components/best-seller-card';
-import BlackFridayDrawer from './components/black-friday-drawer';
 
-import BlackFridaySection from './components/black-friday-section';
 import Footer from './components/footer';
 import Header from './components/header';
 import Main from './components/main';
+import ProjecaoCriativaDrawer from './components/projecao-criativa-drawer';
 
 export default function LandingPage() {
   return (
@@ -17,7 +16,6 @@ export default function LandingPage() {
 
       {/* Conteúdo principal */}
       <div id="main-content">
-        <BlackFridaySection />
         <BestSellerCard />
         <About />
         <Main />
@@ -25,8 +23,7 @@ export default function LandingPage() {
       </div>
 
       {/* Drawers que abrem automaticamente */}
-      {/*<ProjecaoCriativaDrawer />*/}
-      <BlackFridayDrawer />
+      {<ProjecaoCriativaDrawer />}
     </div>
   );
 }
