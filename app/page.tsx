@@ -4,7 +4,6 @@ import BestSellerCard from './components/best-seller-card';
 import Footer from './components/footer';
 import Header from './components/header';
 import Main from './components/main';
-import SpecialPackSection from './components/special-pack-section';
 
 export default function LandingPage() {
   return (
@@ -16,7 +15,7 @@ export default function LandingPage() {
 
       {/* Conteúdo principal */}
       <div id="main-content">
-        <SpecialPackSection />
+        {/* <SpecialPackSection /> */}
         <BestSellerCard />
         <About />
         <Main />

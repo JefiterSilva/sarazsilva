@@ -156,15 +156,18 @@ export default function SpecialPackSection() {
             </ul>
 
             <div className="flex flex-col gap-4 pt-2 sm:flex-row">
-              <Link
-                href={purchaseUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button
+                asChild
+                className="flex-1 bg-gradient-to-r from-green-500 to-green-600 py-3 text-lg font-semibold text-white shadow-lg transition-all hover:from-green-600 hover:to-green-700"
               >
-                <Button className="flex-1 bg-gradient-to-r from-green-500 to-green-600 py-3 text-lg font-semibold text-white shadow-lg transition-all hover:from-green-600 hover:to-green-700">
+                <Link
+                  href={purchaseUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Tag className="mr-2 h-5 w-5" /> Comprar agora por R$ 9,90
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
 
             <div className="border-t border-white/10 pt-4 text-center">

@@ -100,29 +100,31 @@ const BestSellerCard = () => {
 
             {/* Botões de ação */}
             <div className="flex flex-col gap-4 pt-4 sm:flex-row">
-              <Link
-                href="https://pay.hotmart.com/S94768202Q?bid=1722861105152"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button
+                asChild
+                size="lg"
+                className="flex-1 bg-gradient-to-r from-green-500 to-green-600 py-3 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:from-green-600 hover:to-green-700 hover:shadow-xl"
               >
-                <Button
-                  size="lg"
-                  className="flex-1 bg-gradient-to-r from-green-500 to-green-600 py-3 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:from-green-600 hover:to-green-700 hover:shadow-xl"
+                <Link
+                  href="https://pay.hotmart.com/S94768202Q?bid=1722861105152"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Zap className="mr-2 h-5 w-5" />
                   ACESSAR AGORA
-                </Button>
-              </Link>
+                </Link>
+              </Button>
 
-              <Link href="/combo-projecao">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="flex-1 border-2 border-gray-300 py-3 text-lg font-semibold transition-all duration-300 hover:border-gray-400"
-                >
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="flex-1 border-2 border-gray-300 py-3 text-lg font-semibold transition-all duration-300 hover:border-gray-400"
+              >
+                <Link href="/combo-projecao">
                   VER CONTEÚDO DO CURSO
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
 
             {/* Garantia */}

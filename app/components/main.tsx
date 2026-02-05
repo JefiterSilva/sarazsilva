@@ -103,11 +103,12 @@ const Main = () => {
               className="group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <CardContent className="p-0">
-                <Link href={service.link}>
-                  <Button
-                    variant="ghost"
-                    className="relative h-auto w-full justify-start p-6 text-left hover:bg-gray-50"
-                  >
+                <Button
+                  asChild
+                  variant="ghost"
+                  className="relative h-auto w-full justify-start p-6 text-left hover:bg-gray-50"
+                >
+                  <Link href={service.link}>
                     {service.popular && (
                       <Badge
                         className={`absolute -right-2 -top-2 animate-pulse bg-gradient-to-r from-red-600 to-orange-500 shadow-lg hover:animate-none hover:from-orange-500 hover:to-red-600 ${service.promotion ? 'min-w-[180px] p-2 font-bold tracking-tight' : ''}`}
@@ -176,8 +177,8 @@ const Main = () => {
                         </svg>
                       </div>
                     </div>
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </CardContent>
             </Card>
           );
