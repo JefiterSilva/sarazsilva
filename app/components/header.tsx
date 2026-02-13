@@ -79,7 +79,7 @@ const Header = () => {
                   </div>
                 </div>
                 <div className="text-lg font-bold text-white md:text-2xl">
-                  1200+
+                  2300+
                 </div>
                 <div className="text-xs text-gray-300 md:text-sm">
                   Igrejas antedidas com o Pack de Fundos
@@ -92,7 +92,7 @@ const Header = () => {
                   </div>
                 </div>
                 <div className="text-lg font-bold text-white md:text-2xl">
-                  1000+
+                  2100+
                 </div>
                 <div className="text-xs text-gray-300 md:text-sm">
                   alunos no curso da projeção{' '}
@@ -105,7 +105,7 @@ const Header = () => {
                   </div>
                 </div>
                 <div className="text-lg font-bold text-white md:text-2xl">
-                  4 anos
+                  5 anos
                 </div>
                 <div className="text-xs text-gray-300 md:text-sm">
                   de Experiência na mídia e comunicação
