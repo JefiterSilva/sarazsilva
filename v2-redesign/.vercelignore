@@ -1,0 +1,44 @@
+# Build outputs que não devem ir para o deploy
+/out
+/build
+
+# Development files
+*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Dependencies
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation (opcional - comentar se quiser incluir)
+*.md
+!README.md
+
+# Cache
+.next/cache/
+.cache/
+
+# Temporary files
+tmp/
+temp/
+
+# Package manager files (manter apenas um)
+yarn.lock
+pnpm-lock.yaml
+# package-lock.json (manter este)

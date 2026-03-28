@@ -146,7 +146,7 @@ const ComboProjecaoPage = () => {
 
       <div className="mx-auto max-w-4xl px-4 py-8">
         {/* Segunda versão dos cards dos cursos */}
-        <div className="mb-12 space-y-8">
+        <div className="mb-12 space-y-12">
           {/* Card do Curso Parte 1 - Versão Persuasiva */}
           <Card className="group relative overflow-hidden border-0 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:shadow-blue-500/25">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-transparent to-blue-400/10"></div>
@@ -584,7 +584,7 @@ const ComboProjecaoPage = () => {
         <div className="mt-12 space-y-6">
           <h3 className="text-center text-2xl font-bold">Escolha sua opção</h3>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-3">
             {/* Curso Parte 1 */}
             <Card className="border-gray-600 bg-gray-800 transition-colors hover:border-blue-500">
               <CardHeader className="text-center">
