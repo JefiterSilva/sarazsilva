@@ -49,7 +49,7 @@ const Header = () => {
               size="lg"
               className="h-14 w-full rounded-xl bg-green-500 px-8 text-lg font-bold text-white shadow-[0_0_40px_-10px_rgba(34,197,94,0.5)] transition-all duration-300 hover:scale-105 hover:bg-green-600 sm:w-auto"
             >
-              QUERO GARANTIR MINHA VAGA
+              QUERO ME TORNAR ALUNO
             </Button>
             <Button
               asChild

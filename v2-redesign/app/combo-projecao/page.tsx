@@ -14,7 +14,7 @@ import Link from 'next/link';
 
 const ComboProjecaoPage = () => {
   const cursoParte1 = {
-    titulo: 'Dominando o Holyrics parte 1',
+    titulo: 'Dominando o Holyrics 1',
     progresso: '2/8 aulas concluídas',
     cor: 'blue',
     aulas: [
@@ -45,7 +45,7 @@ const ComboProjecaoPage = () => {
   };
 
   const cursoParte2 = {
-    titulo: 'Dominando o Holyrics parte 2',
+    titulo: 'Dominando o Holyrics 2',
     progresso: '5/6 aulas concluídas',
     cor: 'green',
     aulas: [
@@ -285,7 +285,8 @@ const ComboProjecaoPage = () => {
                 >
                   <Link
                     href="https://pay.hotmart.com/S94768202Q?bid=1722861105152"
-                    target="_blank"
+                      target="_blank"
+                      rel="noopener noreferrer"
                   >
                     QUERO O COMBO AGORA
                   </Link>
