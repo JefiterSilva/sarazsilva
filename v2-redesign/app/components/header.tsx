@@ -87,7 +87,7 @@ const Header = () => {
           <div className="group relative aspect-square w-full overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 shadow-2xl md:aspect-[4/3] lg:aspect-square">
             <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#09090b] via-transparent to-transparent"></div>
             <Image
-              src="/perfil2.jpeg"
+              src="/perfil2.jpg"
               alt="Sara Silva"
               fill
               className="object-cover object-center opacity-90 transition-transform duration-700 group-hover:scale-105"
