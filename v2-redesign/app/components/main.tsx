@@ -12,6 +12,7 @@ const services = [
       'A identidade visual é algo que fica muito mais harmonioso quando é bem planejada, e que tal uma ajuda com isso?',
     image: '/Identidade.png',
     color: 'bg-orange-500',
+    price: 14.9,
     link: 'https://hotmart.com/pt-br/marketplace/produtos/identidade-visual-mensal/T100074281B?off=4xkb796a',
   },
   {
@@ -21,12 +22,7 @@ const services = [
       'Um pacote de fundos específicos para utilizar na projeção da sua igreja.',
     image: '/PACKFUNDOS2.png',
     color: 'bg-blue-400',
-    popular: false,
-    promotion: {
-      originalPrice: 55.0,
-      promotionalPrice: 24.9,
-      endDate: 'Fim de mês',
-    },
+    price: 39.9,
     link: 'https://hotmart.com/pt-br/marketplace/produtos/pack-fundos-ii/J98412461Y',
   },
   {
@@ -36,12 +32,7 @@ const services = [
       'Fundos de Projeção é a primeira versão de backgrounds. Contém 40 fundos estáticos e dinâmicos incluindo algumas frases de músicas.',
     image: '/fundos_pro.png',
     color: 'bg-purple-400',
-    popular: false,
-    promotion: {
-      originalPrice: 55.0,
-      promotionalPrice: 24.9,
-      endDate: 'Fim de mês',
-    },
+    price: 25.0,
     link: 'https://pay.hotmart.com/R95452686V?bid=1728743323750',
   },
   {
@@ -51,6 +42,7 @@ const services = [
       'Chegou a segunda edição dos Materiais Criativos e agora com mais artes para eventos e cultos especiais.',
     image: '/pacote-criativo.png',
     color: 'bg-blue-300',
+    price: 25.0,
     link: 'https://hotmart.com/pt-br/marketplace/produtos/hagsxd-pacote-criativo-wbsra/W96708239C',
   },
   {
@@ -60,6 +52,7 @@ const services = [
       'Essa imersão contém aulas práticas com conteúdos exclusivos para equipe de mídia e comunicação das igrejas.',
     image: '/capacitacao.png',
     color: 'bg-cyan-700',
+    price: 109.9,
     link: 'https://hotmart.com/pt-br/marketplace/produtos/capacitacao-imersao-midia-para-igrejas/P93420727E',
   },
   {
@@ -69,6 +62,7 @@ const services = [
       'Ferramentas para ajudar na organização e planejamento de cultos e eventos da igreja.',
     image: '/Identidaderoteiro.png',
     color: 'bg-gray-400',
+    price: 15.0,
     link: 'https://hotmart.com/pt-br/marketplace/produtos/roteiro-de-organizacao-de-culto/S96063596M',
   },
   {
@@ -78,6 +72,7 @@ const services = [
       'Materiais prontos para usar na sua igreja como artes, videos de abertura, vídeo de avisos, crachás de voluntários e mais.',
     image: '/criativo.jpg',
     color: 'bg-orange-500',
+    price: 22.0,
     link: 'https://hotmart.com/pt-br/marketplace/produtos/materiais-criativos/I94921264N',
   },
   {
@@ -87,6 +82,7 @@ const services = [
       'Crie fundos com letras personalizadas no Canva para a projeção das músicas da sua igreja.',
     image: '/Canva.jpg',
     color: 'bg-purple-300',
+    price: 19.9,
     link: 'https://hotmart.com/pt-br/marketplace/produtos/projecao-criativa-aprendizado-na-pratica/C102196297Y',
   },
 ];
@@ -101,12 +97,9 @@ const Main = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-transparent to-green-600/0 transition-colors group-hover:from-blue-600/5 group-hover:to-green-600/5"></div>
 
               <CardContent className="p-6">
-                {service.promotion && (
-                  <Badge className="absolute right-4 top-4 animate-pulse bg-red-500 text-white shadow-[0_0_15px_-3px_rgba(239,68,68,0.5)] hover:bg-red-600">
-                    OFERTA: R${' '}
-                    {service.promotion.promotionalPrice
-                      .toFixed(2)
-                      .replace('.', ',')}
+                {typeof service.price === 'number' && (
+                  <Badge className="absolute right-4 top-4 bg-slate-800/90 text-white shadow-[0_0_15px_-3px_rgba(59,130,246,0.25)] hover:bg-slate-800">
+                    R$ {service.price.toFixed(2).replace('.', ',')}
                   </Badge>
                 )}
 
