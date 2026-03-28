@@ -1,8 +1,8 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": ".next",
+  "installCommand": "cd v2-redesign && npm install --legacy-peer-deps",
+  "buildCommand": "cd v2-redesign && npm run build",
+  "outputDirectory": "v2-redesign/.next",
   "framework": "nextjs",
-  "installCommand": "npm install --legacy-peer-deps",
   "rewrites": [
     {
       "source": "/((?!api/).*)",
@@ -43,7 +43,7 @@
     }
   ],
   "functions": {
-    "app/**/*.{js,jsx,ts,tsx}": {
+    "v2-redesign/app/**/*.{js,jsx,ts,tsx}": {
       "maxDuration": 30
     }
   }
