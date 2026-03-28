@@ -1,8 +1,10 @@
 {
-  "installCommand": "cd v2-redesign && npm install --legacy-peer-deps",
-  "buildCommand": "cd v2-redesign && npm run build",
-  "outputDirectory": "v2-redesign/.next",
-  "framework": "nextjs",
+  "builds": [
+    {
+      "src": "v2-redesign/package.json",
+      "use": "@vercel/next"
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!api/).*)",
