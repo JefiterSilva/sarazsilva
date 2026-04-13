@@ -12,10 +12,11 @@
 
 ```bash
 # Instalar dependências
+cd v2-redesign
 npm install
 
-# Fazer build para produção
-npm run build
+# Fazer build estático para Hostinger (gera `out/`)
+npm run build:hostinger
 ```
 
 **✅ Arquivos prontos para upload:**
@@ -104,7 +105,7 @@ public_html/
 Para atualizar o site:
 
 1. Faça as alterações no código local
-2. Execute `npm run build`
+2. Execute `npm run build:hostinger` (em `v2-redesign/`)
 3. Faça upload dos novos arquivos da pasta `out`
 4. Substitua os arquivos antigos
 
@@ -136,7 +137,7 @@ Se encontrar problemas:
 - Este deploy gera um site estático
 - Não há funcionalidades server-side
 - Todas as rotas devem ser pré-renderizadas
-- Imagens devem estar na pasta `public`
+- Imagens devem estar na pasta `v2-redesign/public`
 
 ## Status do Deploy
 

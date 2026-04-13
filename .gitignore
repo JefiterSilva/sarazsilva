@@ -2,13 +2,24 @@
 
 # dependencies
 /node_modules
+/v2-redesign/node_modules
 
 # next.js
 /.next/
 /out/
+/v2-redesign/.next/
+/v2-redesign/out/
+
+# trae
+/.trae/
+/v2-redesign/.trae/
+
+# local tools
+/.tools/
 
 # production
 /build
+/v2-redesign/build
 
 # debug
 npm-debug.log*

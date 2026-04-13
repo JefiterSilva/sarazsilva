@@ -5,10 +5,10 @@
 ### 📦 Arquivos Criados/Modificados
 
 ✅ **`vercel.json`** - Configurações específicas da Vercel
-✅ **`next.config.mjs`** - Otimizado para produção Vercel
-✅ **`next-sitemap.config.js`** - Geração automática de sitemap
 ✅ **`.vercelignore`** - Arquivos excluídos do deploy
-✅ **`package.json`** - Scripts e dependências atualizados
+✅ **`v2-redesign/next.config.mjs`** - Otimizado para produção Vercel
+✅ **`v2-redesign/next-sitemap.config.js`** - Geração automática de sitemap
+✅ **`v2-redesign/package.json`** - Scripts e dependências atualizados
 ✅ **`VERCEL-DEPLOY.md`** - Guia completo de deploy
 
 ### 🔧 Configurações Implementadas
