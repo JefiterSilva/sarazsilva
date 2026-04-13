@@ -17,10 +17,8 @@ import { useEffect, useState } from 'react';
 
 export default function PromoModal() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
     // Abre o modal automaticamente após 1 segundo
     const timer = setTimeout(() => {
       setIsOpen(true);
@@ -28,11 +26,6 @@ export default function PromoModal() {
 
     return () => clearTimeout(timer);
   }, []);
-
-  // Não renderiza nada até o componente estar montado
-  if (!isMounted) {
-    return null;
-  }
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>

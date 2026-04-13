@@ -14,8 +14,8 @@ const Testimonials = () => {
               <div className="space-y-4">
                 <div className="flex text-yellow-400">{'★'.repeat(5)}</div>
                 <p className="italic text-gray-600">
-                  "Curso incrível! Agora consigo operar o Holyrics com total
-                  confiança. A didática da Sara é excepcional."
+                  &quot;Curso incrível! Agora consigo operar o Holyrics com
+                  total confiança. A didática da Sara é excepcional.&quot;
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="h-10 w-10 rounded-full bg-gray-300"></div>
@@ -35,8 +35,8 @@ const Testimonials = () => {
               <div className="space-y-4">
                 <div className="flex text-yellow-400">{'★'.repeat(5)}</div>
                 <p className="italic text-gray-600">
-                  "Transformou completamente nossa apresentação nos cultos.
-                  Recomendo para toda equipe de mídia!"
+                  &quot;Transformou completamente nossa apresentação nos
+                  cultos. Recomendo para toda equipe de mídia!&quot;
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="h-10 w-10 rounded-full bg-gray-300"></div>

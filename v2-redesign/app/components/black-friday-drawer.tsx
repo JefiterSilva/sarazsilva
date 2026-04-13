@@ -16,15 +16,11 @@ import { useEffect, useState } from 'react';
 
 export default function BlackFridayDrawer() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
     const timer = setTimeout(() => setIsOpen(true), 1500);
     return () => clearTimeout(timer);
   }, []);
-
-  if (!isMounted) return null;
 
   return (
     <Drawer open={isOpen} onOpenChange={setIsOpen}>

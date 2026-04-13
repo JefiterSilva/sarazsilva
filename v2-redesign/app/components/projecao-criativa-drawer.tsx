@@ -13,11 +13,9 @@ import { useEffect, useRef, useState } from 'react';
 // Drawer para divulgar o curso Projeção Criativa no Canva
 export default function ProjecaoCriativaDrawer() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
-    setIsMounted(true);
     // Abre após 4s para não conflitar com outros modais/drawers
     const timer = setTimeout(() => {
       setIsOpen(true);
@@ -44,8 +42,6 @@ export default function ProjecaoCriativaDrawer() {
       }
     }
   }, [isOpen]);
-
-  if (!isMounted) return null;
 
   return (
     <Drawer open={isOpen} onOpenChange={setIsOpen}>

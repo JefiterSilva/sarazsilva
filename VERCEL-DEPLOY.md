@@ -63,7 +63,7 @@ vercel --prod
 ✅ **Já configurado no projeto:**
 
 - **`vercel.json`** - Configurações específicas da Vercel
-- **`next.config.mjs`** - Otimizado para SSR/SSG
+- **`v2-redesign/next.config.mjs`** - Otimizado para SSR/SSG
 - **Headers de segurança** - CSRF, XSS, etc.
 - **Cache otimizado** - Assets estáticos
 - **Compressão** - Gzip automático
@@ -133,6 +133,7 @@ Value: 76.76.19.61
 
 ```bash
 # Limpar cache e reinstalar
+cd v2-redesign
 rm -rf node_modules package-lock.json
 npm install
 ```

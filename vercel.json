@@ -1,5 +1,5 @@
 {
-  "installCommand": "cd v2-redesign && npm install --legacy-peer-deps",
+  "installCommand": "cd v2-redesign && npm ci --legacy-peer-deps",
   "buildCommand": "cd v2-redesign && npm run build",
   "outputDirectory": "v2-redesign/.next",
   "framework": "nextjs",

@@ -75,21 +75,21 @@
 
 ### 🔧 **Configuração**
 
-- `public/robots.txt` - Controle de indexação
-- `public/sitemap.xml` - Mapa do site
-- `public/site.webmanifest` - PWA manifest
-- `public/browserconfig.xml` - Configuração Windows
+- `v2-redesign/public/robots.txt` - Controle de indexação
+- `v2-redesign/public/sitemap.xml` - Mapa do site
+- `v2-redesign/public/site.webmanifest` - PWA manifest
+- `v2-redesign/public/browserconfig.xml` - Configuração Windows
 
 ### 🎨 **Componentes**
 
-- `app/components/seo-head.tsx` - Meta tags dinâmicas
-- `app/components/google-analytics.tsx` - Analytics
+- `v2-redesign/app/components/seo-head.tsx` - Meta tags dinâmicas
+- `v2-redesign/app/components/google-analytics.tsx` - Analytics
 
 ## 🚀 **Como Usar**
 
 ### 1. **Variáveis de Ambiente**
 
-Crie um arquivo `.env.local`:
+Crie um arquivo `.env.local` em `v2-redesign/`:
 
 ```env
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX

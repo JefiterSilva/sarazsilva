@@ -6,7 +6,7 @@ O Prettier com plugin Tailwind CSS está configurado para formatar automaticamen
 
 ### 🔧 O que foi configurado:
 
-1. **`.prettierrc.json`** - Configuração do Prettier com plugin Tailwind
+1. **`v2-redesign/.prettierrc.json`** - Configuração do Prettier com plugin Tailwind
 2. **`.vscode/settings.json`** - Configurações do VS Code para formatação automática
 3. **`.vscode/extensions.json`** - Extensões recomendadas
 
@@ -42,12 +42,13 @@ O Prettier com plugin Tailwind CSS está configurado para formatar automaticamen
 1. **Verifique se a extensão Prettier está instalada**
 2. **Pressione `Ctrl+Shift+P`** → "Format Document With..." → "Prettier"
 3. **Reinicie o VS Code**
-4. **Execute `npm install`** para garantir que as dependências estão atualizadas
+4. **Execute `npm install` em `v2-redesign/`** para garantir que as dependências estão atualizadas
 
 ### 📝 Scripts úteis:
 
 ```bash
 # Formatar todos os arquivos manualmente
+cd v2-redesign
 npm run format
 
 # Verificar se todos os arquivos estão formatados
