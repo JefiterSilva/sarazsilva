@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
 
+import { cn } from '@/lib/utils';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Mulish } from 'next/font/google';
+import { Geist, Mulish } from 'next/font/google';
 import GoogleAnalytics from './components/google-analytics';
 import './globals.css';
+
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 const mulish = Mulish({
   subsets: ['latin'],
@@ -123,7 +126,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="scroll-smooth">
+    <html
+      lang="pt-BR"
+      className={cn('scroll-smooth', 'font-sans', geist.variable)}
+    >
       <head>
         {/* Meta tags adicionais para SEO */}
         <meta
