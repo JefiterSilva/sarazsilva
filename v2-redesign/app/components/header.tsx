@@ -64,6 +64,19 @@ const Header = () => {
                 </span>
               </Link>
             </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="h-14 w-full rounded-xl border-cyan-500/40 bg-cyan-500/10 px-8 text-cyan-200 hover:bg-cyan-500/15 hover:text-white sm:w-auto"
+            >
+              <Link href="/kit-midia-igreja">
+                <span className="flex items-center">
+                  <PlayCircle className="mr-2 h-5 w-5" />
+                  Ver Kit Mídia Igreja
+                </span>
+              </Link>
+            </Button>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-6 pt-6 text-sm font-medium text-slate-400 lg:justify-start">
