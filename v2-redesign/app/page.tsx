@@ -1,7 +1,9 @@
+import { Network } from 'lucide-react';
 import About from './components/about';
 import BestSellerCard from './components/best-seller-card';
 import Footer from './components/footer';
 import Header from './components/header';
+import HomeEntryCard from './components/home-entry-card';
 import Main from './components/main';
 import TopBanner from './components/top-banner';
 
@@ -40,6 +42,15 @@ export default function LandingPage() {
               Explore mais materiais e cursos para revolucionar a mídia da sua
               igreja.
             </p>
+          </div>
+          <div className="mb-6">
+            <HomeEntryCard
+              title="Kit Mídia Igreja"
+              description="Curadoria de equipamentos reais para rede, vídeo, retorno, automação e cenografia — organizado por prioridade para comprar sem errar a ordem."
+              href="/kit-midia-igreja"
+              icon={Network}
+              actionLabel="Acessar"
+            />
           </div>
           <Main />
         </div>
