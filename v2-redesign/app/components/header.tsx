@@ -14,12 +14,12 @@ const Header = () => {
   };
 
   return (
-    <header className="relative flex w-full items-center justify-center overflow-hidden bg-[#09090b] pb-32 pt-20 text-white">
+    <header className="relative flex min-h-[90svh] w-full items-center justify-center overflow-hidden bg-[#09090b] py-16 text-white sm:py-20">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-[#09090b] to-[#09090b]"></div>
       <div className="pointer-events-none absolute left-1/2 top-1/4 h-[400px] w-[800px] -translate-x-1/2 rounded-full bg-blue-600/20 blur-[120px]"></div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center gap-12 px-4 lg:flex-row">
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center gap-12 px-4 lg:flex-row lg:items-center">
         {/* Left Content */}
         <div className="flex-1 space-y-8 text-center lg:text-left">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 text-sm font-medium text-blue-400">

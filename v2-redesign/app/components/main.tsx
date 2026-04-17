@@ -103,7 +103,7 @@ const Main = () => {
                   </Badge>
                 )}
 
-                <div className="flex flex-col items-start gap-6 sm:flex-row">
+                <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
                   <div
                     className={`h-24 w-24 shrink-0 rounded-2xl p-1 ${service.color} relative overflow-hidden shadow-lg transition-transform duration-300 group-hover:scale-105`}
                   >

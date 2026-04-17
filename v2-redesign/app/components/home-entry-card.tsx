@@ -30,7 +30,7 @@ export default function HomeEntryCard({
       </div>
 
       <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-10">
-        <div className="flex items-start gap-4 md:gap-5">
+        <div className="flex items-center gap-4 md:gap-5">
           <div className="relative grid h-12 w-12 place-items-center rounded-2xl border border-white/10 bg-white/5 text-cyan-200 shadow-[0_18px_35px_rgba(34,211,238,0.16)] transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-[1.04] md:h-14 md:w-14">
             <Icon className="h-6 w-6 md:h-7 md:w-7" />
             <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/10" />

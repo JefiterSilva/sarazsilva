@@ -92,7 +92,7 @@ const ComboProjecaoPage = () => {
         </div>
       </header>
 
-      <main className="mx-auto max-w-5xl gap-12 px-4 py-12">
+      <main className="mx-auto flex max-w-5xl flex-col gap-12 px-4 py-12">
         {/* Header Title */}
         <div className="mb-16 space-y-4 text-center">
           <Badge className="border border-blue-500/20 bg-blue-500/10 px-4 py-1.5 text-sm uppercase tracking-wider text-blue-400">
@@ -118,7 +118,7 @@ const ComboProjecaoPage = () => {
             <div className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-blue-500/10 blur-3xl"></div>
 
             <CardHeader className="relative border-b border-slate-800/50 pb-6">
-              <div className="flex items-start space-x-4">
+              <div className="flex items-center space-x-4">
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-blue-500/20 bg-blue-500/10">
                   <BookOpen className="h-7 w-7 text-blue-400" />
                 </div>
@@ -163,7 +163,7 @@ const ComboProjecaoPage = () => {
             <div className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-green-500/10 blur-3xl"></div>
 
             <CardHeader className="relative border-b border-slate-800/50 pb-6">
-              <div className="flex items-start space-x-4">
+              <div className="flex items-center space-x-4">
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-green-500/20 bg-green-500/10">
                   <Zap className="h-7 w-7 text-green-400" />
                 </div>
@@ -285,8 +285,8 @@ const ComboProjecaoPage = () => {
                 >
                   <Link
                     href="https://pay.hotmart.com/S94768202Q?bid=1722861105152"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     QUERO O COMBO AGORA
                   </Link>

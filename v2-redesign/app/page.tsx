@@ -13,7 +13,7 @@ export default function LandingPage() {
       <TopBanner />
 
       {/* Header em tela inteira */}
-      <section className="min-h-[90vh]">
+      <section className="flex min-h-[90svh] items-center">
         <Header />
       </section>
 
@@ -23,7 +23,7 @@ export default function LandingPage() {
         className="relative z-10 flex flex-col gap-20 pb-20"
       >
         {/* Main Offer Component */}
-        <div className="container relative z-20 mx-auto -mt-20 px-4">
+        <div className="container relative z-20 mx-auto -mt-8 px-4 sm:-mt-12 md:-mt-20">
           <BestSellerCard />
         </div>
 

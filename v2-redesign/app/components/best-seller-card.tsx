@@ -15,7 +15,7 @@ const BestSellerCard = () => {
 
           <div className="pointer-events-none absolute right-0 top-0 h-64 w-64 rounded-full bg-green-500/10 blur-[100px]"></div>
 
-          <div className="relative z-10 grid gap-8 p-8 md:grid-cols-2 md:p-12">
+          <div className="relative z-10 grid gap-8 p-5 sm:p-7 md:grid-cols-2 md:p-12">
             {/* Left Col - Info */}
             <div className="space-y-6">
               <Badge
@@ -27,14 +27,14 @@ const BestSellerCard = () => {
               </Badge>
 
               <div>
-                <h2 className="text-3xl font-bold leading-tight text-white md:text-4xl">
+                <h2 className="text-center text-2xl font-bold leading-tight text-white md:text-4xl">
                   <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
                     COMBO DA PROJEÇÃO
                   </span>
                   <br />
                   no Holyrics
                 </h2>
-                <p className="mt-4 text-lg text-slate-400">
+                <p className="mt-4 text-center text-lg text-slate-400">
                   Domine o software da projeção da sua igreja desde o básico ao
                   avançado. Treine sua equipe e eleve seu nível de projeção com
                   o curso prático e completo.
@@ -85,30 +85,30 @@ const BestSellerCard = () => {
             {/* Right Col - Pricing */}
             <div className="relative">
               <div className="absolute inset-0 rounded-2xl border border-slate-800 bg-gradient-to-br from-blue-600/5 to-green-600/5"></div>
-              <div className="relative flex h-full flex-col justify-center space-y-6 p-8">
-                <div className="flex justify-center">
+              <div className="relative flex h-full flex-col justify-center space-y-6 p-5 sm:p-7 md:p-8">
+                <div className="flex items-center justify-center">
                   <Badge className="animate-pulse bg-red-500 px-4 py-1.5 text-sm text-white hover:bg-red-600">
                     <Clock className="mr-2 h-4 w-4" />
                     Oferta por tempo limitado
                   </Badge>
                 </div>
 
-                <div className="space-y-2 text-center">
-                  <p className="text-lg text-slate-400 line-through">
+                <div className="space-y-2">
+                  <p className="text-center text-lg text-slate-400 line-through">
                     De R$ 197,00 por apenas
                   </p>
-                  <div className="flex items-start justify-center gap-1">
-                    <span className="mt-2 text-2xl font-bold text-green-400">
+                  <div className="flex items-center justify-center gap-1">
+                    <span className="text-2xl font-bold text-green-400 md:text-3xl">
                       R$
                     </span>
-                    <span className="text-6xl font-black tracking-tighter text-green-400">
+                    <span className="text-2xl font-black tracking-tighter text-green-400 sm:text-6xl md:text-4xl">
                       84
                     </span>
-                    <span className="mt-2 text-2xl font-bold text-green-400">
+                    <span className="text-2xl font-bold text-green-400 md:text-3xl">
                       ,00
                     </span>
                   </div>
-                  <p className="pt-2 text-sm font-semibold text-green-500">
+                  <p className="pt-2 text-center text-sm font-semibold text-green-500">
                     57% de desconto aplicado
                   </p>
                 </div>
@@ -117,7 +117,7 @@ const BestSellerCard = () => {
                   <Button
                     asChild
                     size="lg"
-                    className="h-16 w-full rounded-xl bg-green-500 text-xl font-bold text-white shadow-[0_0_40px_-10px_rgba(34,197,94,0.5)] transition-all duration-300 hover:scale-[1.02] hover:bg-green-600"
+                    className="h-16 w-full rounded-xl bg-green-500 px-4 text-base font-bold text-white shadow-[0_0_40px_-10px_rgba(34,197,94,0.5)] transition-all duration-300 hover:scale-[1.02] hover:bg-green-600 sm:text-xl"
                   >
                     <Link
                       href="https://pay.hotmart.com/S94768202Q?bid=1722861105152"
