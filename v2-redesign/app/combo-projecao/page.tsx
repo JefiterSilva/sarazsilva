@@ -10,6 +10,7 @@ import {
   Star,
   Zap,
 } from 'lucide-react';
+
 import Link from 'next/link';
 
 const ComboProjecaoPage = () => {
@@ -21,26 +22,36 @@ const ComboProjecaoPage = () => {
       {
         id: 1,
         titulo:
-          'Aula 1 - Como adicionar música, editar temas e colocar fundos em movimento?',
+          'Aula 1 - Como adicionar música, editar temas e colocar fundos em movimento.',
       },
       {
         id: 2,
         titulo:
-          'Aula 2 - Inserir vídeos, imagens, áudios / Power Point e Anúncios',
+          'Aula 2 - Inserir vídeos, imagens, áudios / Power Point e Anúncios.',
       },
-      { id: 3, titulo: 'Planejamento de culto (planilha)' },
+
+      {
+        id: 3,
+        titulo:
+          'Aula 3 - Como colocar vários temas na mesma música e como deixar um tema padrão.',
+      },
       {
         id: 4,
         titulo:
-          'Aula 3 - Como colocar vários temas na mesma música e como deixar um tema padrão?',
+          'Aula 4 - Como colocar fundo com letras personalizadas e configurar a letra como comentário.',
+      },
+      { id: 5, titulo: 'Aula 5 - Como organizar o culto dentro do Holyrics.' },
+      { id: 6, titulo: 'Aula 6 - Como inserir novas fontes no Holyrics.' },
+      {
+        id: 7,
+        titulo:
+          'Aula 7 - Nova atualização para fundos de letras personalizadas.',
       },
       {
-        id: 5,
+        id: 8,
         titulo:
-          'Aula 4 - Como colocar fundo com letras personalizadas e configurar a letra como comentário?',
+          'Aula 8 - Criando uma contagem regressiva com próxima apresentação.',
       },
-      { id: 6, titulo: 'Aula 5 - Como organizar o culto dentro do Holyrics' },
-      { id: 7, titulo: 'Aula 6 - Como inserir novas fontes no Holyrics' },
     ],
   };
 
@@ -51,15 +62,33 @@ const ComboProjecaoPage = () => {
     aulas: [
       {
         id: 1,
-        titulo: 'Aula 1 - Como configurar a tv de retorno utilizando TV BOX',
+        titulo: 'Aula 1 - Como configurar a TV de retorno utilizando TV BOX.',
       },
-      { id: 2, titulo: 'Aula 2 - Bíblia' },
-      { id: 3, titulo: 'Aula 3 - Utilizando o Aplicativo do Holyrics' },
-      { id: 4, titulo: 'Aula 4 - Configurando a Bíblia e Música BILÍNGUE' },
-      { id: 5, titulo: 'Aula 5 - Letra Automática com mp3' },
+      {
+        id: 2,
+        titulo:
+          'Aula 2 - Bíblia: ativando novas versões, editando letras e fundos, e outras configurações.',
+      },
+      {
+        id: 3,
+        titulo: 'Aula 3 - Utilizando o aplicativo do Holyrics para a projeção.',
+      },
+      { id: 4, titulo: 'Aula 4 - Configurando a Bíblia e Música BILÍNGUE.' },
+      { id: 5, titulo: 'Aula 5 - Letras Automáticas com mp3.' },
       {
         id: 6,
-        titulo: 'Aula 6 - Automação do Holyrics com som, luz e live (GATILHOS)',
+        titulo:
+          'Automação de gatilhos pelo Holyrics com mesa digital, iluminação digital e Live pelo programa VMIX.',
+      },
+      {
+        id: 7,
+        titulo:
+          'Aula 7 - Configurando telas publica e retorno no preview do seu programa.',
+      },
+      {
+        id: 8,
+        titulo:
+          'Aula 8 - PAINEL DE COMUNICAÇÃO: editando tema, tamanho de fonte, cor do relogio, cronometro....',
       },
     ],
   };
@@ -135,19 +164,19 @@ const ComboProjecaoPage = () => {
 
             <CardContent className="relative pt-6">
               <div className="space-y-4">
-                <h4 className="text-sm font-bold uppercase tracking-widest text-white">
+                <h4 className="text-sm font-bold uppercase tracking-widest text-white md:text-lg">
                   Grade de Aulas:
                 </h4>
-                <ul className="space-y-3">
+                <ul className="space-y-3 text-sm md:text-lg">
                   {cursoParte1.aulas.map((aula, idx) => (
                     <li
                       key={idx}
                       className="flex items-start space-x-3 text-slate-300"
                     >
-                      <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-slate-700 bg-slate-800 text-[10px] font-bold text-slate-400">
+                      <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-slate-700 bg-slate-800 text-[10px] font-bold text-slate-400 md:text-lg">
                         {idx + 1}
                       </div>
-                      <span className="text-sm leading-relaxed">
+                      <span className="text-sm leading-relaxed md:text-lg">
                         {aula.titulo}
                       </span>
                     </li>
@@ -172,7 +201,7 @@ const ComboProjecaoPage = () => {
                     {cursoParte2.titulo}
                   </h3>
                   <p className="mt-1 text-sm font-medium text-green-400">
-                    Intermediário ao Avançado • 8 Aulas Práticas
+                    Do Zero ao Avançado • 8 Aulas Práticas
                   </p>
                 </div>
               </div>
@@ -180,7 +209,7 @@ const ComboProjecaoPage = () => {
 
             <CardContent className="relative pt-6">
               <div className="space-y-4">
-                <h4 className="text-sm font-bold uppercase tracking-widest text-white">
+                <h4 className="text-sm font-bold uppercase tracking-widest text-white md:text-lg">
                   Grade de Aulas:
                 </h4>
                 <ul className="space-y-3">
@@ -189,10 +218,10 @@ const ComboProjecaoPage = () => {
                       key={idx}
                       className="flex items-start space-x-3 text-slate-300"
                     >
-                      <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-slate-700 bg-slate-800 text-[10px] font-bold text-slate-400">
+                      <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-slate-700 bg-slate-800 text-[10px] font-bold text-slate-400 md:h-6 md:w-6 md:text-lg">
                         {idx + 1}
                       </div>
-                      <span className="text-sm leading-relaxed">
+                      <span className="text-sm leading-relaxed md:text-lg">
                         {aula.titulo}
                       </span>
                     </li>
@@ -204,7 +233,7 @@ const ComboProjecaoPage = () => {
         </div>
 
         {/* MAIN OFFER - COMBO */}
-        <div className="relative mb-24 mt-24 md:mt-32">
+        <div className="relative mb-24 mt-4 md:mt-16">
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/20 to-green-600/20 blur-3xl"></div>
 
           <Card className="relative overflow-hidden rounded-3xl border border-slate-700 bg-slate-900/80 shadow-2xl backdrop-blur-xl">

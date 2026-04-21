@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
 import { cn } from '@/lib/utils';
-import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Geist, Mulish } from 'next/font/google';
 import GoogleAnalytics from './components/google-analytics';
+
 import './globals.css';
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
@@ -243,10 +243,11 @@ export default function RootLayout({
       <body
         className={`${mulish.className} bg-[#09090b] text-slate-50 antialiased`}
       >
-        {children}
-        <Analytics />
-        <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_ID} />
         <SpeedInsights />
+
+        {children}
+
+        <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_ID} />
       </body>
     </html>
   );
