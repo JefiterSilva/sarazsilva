@@ -89,28 +89,22 @@ const BestSellerCard = () => {
                 <div className="flex items-center justify-center">
                   <Badge className="animate-pulse bg-red-500 px-4 py-1.5 text-sm text-white hover:bg-red-600">
                     <Clock className="mr-2 h-4 w-4" />
-                    Oferta por tempo limitado
+                    Melhor condição disponível
                   </Badge>
                 </div>
 
                 <div className="space-y-2">
-                  <p className="text-center text-lg text-slate-400 line-through">
-                    De R$ 197,00 por apenas
-                  </p>
                   <div className="flex items-center justify-center gap-1">
                     <span className="text-2xl font-bold text-green-400 md:text-3xl">
                       R$
                     </span>
                     <span className="text-2xl font-black tracking-tighter text-green-400 sm:text-6xl md:text-4xl">
-                      84
+                      99
                     </span>
                     <span className="text-2xl font-bold text-green-400 md:text-3xl">
-                      ,00
+                      ,80
                     </span>
                   </div>
-                  <p className="pt-2 text-center text-sm font-semibold text-green-500">
-                    57% de desconto aplicado
-                  </p>
                 </div>
 
                 <div className="space-y-4 pt-4">

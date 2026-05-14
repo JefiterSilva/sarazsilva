@@ -102,6 +102,7 @@ const Header = () => {
             <Image
               src="/perfil2.jpg"
               alt="Sara Silva"
+              loading="eager"
               fill
               className="object-cover object-center opacity-90 transition-transform duration-700 group-hover:scale-105"
             />
