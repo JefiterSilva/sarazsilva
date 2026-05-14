@@ -241,7 +241,7 @@ const ComboProjecaoPage = () => {
 
             <div className="absolute right-0 top-0 z-20">
               <div className="flex items-center gap-1 rounded-bl-xl bg-red-500 px-4 py-2 text-xs font-bold text-white shadow-lg">
-                <Clock className="h-3 w-3" /> OFERTA POR TEMPO LIMITADO
+                <Clock className="h-3 w-3" /> Melhor condição disponível!
               </div>
             </div>
 
@@ -289,23 +289,17 @@ const ComboProjecaoPage = () => {
 
               {/* Pricing Area */}
               <div className="flex flex-col items-center justify-center bg-slate-950/50 p-8 text-center md:col-span-2 md:p-10">
-                <p className="mb-2 text-white line-through">
-                  De R$ 194,00 por apenas
-                </p>
                 <div className="mb-2 flex items-start justify-center gap-1">
                   <span className="mt-2 text-2xl font-bold text-green-400">
                     R$
                   </span>
                   <span className="text-6xl font-black tracking-tighter text-green-400">
-                    84
+                    99
                   </span>
                   <span className="mt-2 text-2xl font-bold text-green-400">
-                    ,00
+                    ,80
                   </span>
                 </div>
-                <Badge className="mb-8 border-0 bg-green-500/20 text-green-400 hover:bg-green-500/20">
-                  Economia de R$ 110,00!
-                </Badge>
 
                 <Button
                   asChild
