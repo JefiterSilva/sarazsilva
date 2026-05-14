@@ -294,12 +294,15 @@ const ComboProjecaoPage = () => {
                     R$
                   </span>
                   <span className="text-6xl font-black tracking-tighter text-green-400">
-                    99
+                    84
                   </span>
                   <span className="mt-2 text-2xl font-bold text-green-400">
-                    ,80
+                    ,00
                   </span>
                 </div>
+                <p className="text-center text-lg text-slate-400 line-through">
+                  De R$ 99,80 por apenas
+                </p>
 
                 <Button
                   asChild
