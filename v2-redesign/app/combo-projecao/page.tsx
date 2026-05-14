@@ -347,7 +347,7 @@ const ComboProjecaoPage = () => {
                 Apenas Parte 1
               </h4>
               <p className="mb-4 text-sm text-white">Básico ao Intermediário</p>
-              <p className="mb-6 text-3xl font-bold text-blue-400">R$ 42,00</p>
+              <p className="mb-6 text-3xl font-bold text-blue-400">R$ 49,90</p>
             </div>
             <Button
               asChild
@@ -372,7 +372,7 @@ const ComboProjecaoPage = () => {
               <p className="mb-4 text-sm text-white">
                 Intermediário ao Avançado
               </p>
-              <p className="mb-6 text-3xl font-bold text-green-400">R$ 42,00</p>
+              <p className="mb-6 text-3xl font-bold text-green-400">R$ 49,90</p>
             </div>
             <Button
               asChild
