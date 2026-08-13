@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { cn } from '@/lib/utils';
+import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Geist, Mulish } from 'next/font/google';
 import GoogleAnalytics from './components/google-analytics';
@@ -244,6 +245,7 @@ export default function RootLayout({
         className={`${mulish.className} bg-[#09090b] text-slate-50 antialiased`}
       >
         <SpeedInsights />
+        <Analytics />
 
         {children}
 
