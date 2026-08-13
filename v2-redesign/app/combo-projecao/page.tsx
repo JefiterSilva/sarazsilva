@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 
 import Link from 'next/link';
+import { HotmartLink } from '../components/hotmart-link';
 
 const ComboProjecaoPage = () => {
   const cursoParte1 = {
@@ -309,13 +310,12 @@ const ComboProjecaoPage = () => {
                   size="lg"
                   className="h-14 w-full rounded-xl bg-green-500 text-lg font-bold text-white shadow-[0_0_30px_-5px_rgba(34,197,94,0.4)] transition-all hover:scale-105 hover:bg-green-600"
                 >
-                  <Link
+                  <HotmartLink
                     href="https://pay.hotmart.com/S94768202Q?bid=1722861105152"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    product="combo"
                   >
                     QUERO O COMBO AGORA
-                  </Link>
+                  </HotmartLink>
                 </Button>
                 <p className="mt-4 flex items-center justify-center gap-1 text-xs text-white">
                   <ShieldCheck className="h-3 w-3" /> Garantia incondicional de
@@ -351,12 +351,12 @@ const ComboProjecaoPage = () => {
               variant="outline"
               className="w-full border-slate-700 hover:border-blue-500/50 hover:bg-blue-500/10 hover:text-blue-400"
             >
-              <Link
+              <HotmartLink
                 href="https://hotmart.com/pt-br/marketplace/produtos/dominando-o-holyrics-parte-1/Q93610850I"
-                target="_blank"
+                product="parte_1"
               >
                 Comprar Parte 1
-              </Link>
+              </HotmartLink>
             </Button>
           </Card>
 
@@ -376,12 +376,12 @@ const ComboProjecaoPage = () => {
               variant="outline"
               className="w-full border-slate-700 hover:border-green-500/50 hover:bg-green-500/10 hover:text-green-400"
             >
-              <Link
+              <HotmartLink
                 href="https://hotmart.com/pt-br/marketplace/produtos/dominando-o-holyrics-parte-2/A94024412O?sck=HOTMART_SITE&search=2042cdc2-7353-42c4-b28c-55373570108e&hotfeature=33"
-                target="_blank"
+                product="parte_2"
               >
                 Comprar Parte 2
-              </Link>
+              </HotmartLink>
             </Button>
           </Card>
         </div>
