@@ -90,6 +90,24 @@ const ComboProjecaoPage = () => {
         titulo:
           'Aula 8 - PAINEL DE COMUNICAÇÃO: editando tema, tamanho de fonte, cor do relogio, cronometro....',
       },
+      {
+        id: 9,
+        titulo: 'Aula 9 - Criando gatilhos de automação com o Holyrics Action.',
+      },
+      {
+        id: 10,
+        titulo:
+          'Aula 10 - Automação do Holyrics com o Lumikit para troca de iluminação através da projeção.',
+      },
+      {
+        id: 11,
+        titulo: 'Aula 11 - Apresentações rápidas e atalho da bíblia.',
+      },
+      {
+        id: 12,
+        titulo:
+          'Aula 12 - Tarefas agendadas para criar rotina de projeção com dia e horario.',
+      },
     ],
   };
 
@@ -201,7 +219,7 @@ const ComboProjecaoPage = () => {
                     {cursoParte2.titulo}
                   </h3>
                   <p className="mt-1 text-sm font-medium text-green-400">
-                    Do Zero ao Avançado • 8 Aulas Práticas
+                    Do Zero ao Avançado • 12 Aulas Práticas
                   </p>
                 </div>
               </div>
@@ -369,7 +387,7 @@ const ComboProjecaoPage = () => {
               <p className="mb-4 text-sm text-white">
                 Intermediário ao Avançado
               </p>
-              <p className="mb-6 text-3xl font-bold text-green-400">R$ 49,90</p>
+              <p className="mb-6 text-3xl font-bold text-green-400">R$ 59,90</p>
             </div>
             <Button
               asChild
