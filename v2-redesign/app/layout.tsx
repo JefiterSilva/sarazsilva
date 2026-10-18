@@ -1,18 +1,25 @@
 import type { Metadata } from 'next';
 
+import { buildSiteGraph } from '@/lib/geo/schemas';
 import { cn } from '@/lib/utils';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Geist, Mulish } from 'next/font/google';
+import { Geist, Geist_Mono } from 'next/font/google';
 import GoogleAnalytics from './components/google-analytics';
+import JsonLd from './components/json-ld';
 
 import './globals.css';
 
-const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
-
-const mulish = Mulish({
+const geist = Geist({
   subsets: ['latin'],
-  variable: '--font-mulish',
+  variable: '--font-geist',
+  display: 'swap',
+});
+
+const geistMono = Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-geist-mono',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -95,13 +102,13 @@ export const metadata: Metadata = {
   category: 'education',
   classification: 'Cursos e Treinamentos',
   other: {
-    'theme-color': '#3B82F6',
-    'color-scheme': 'light dark',
+    'theme-color': '#0a0a0b',
+    'color-scheme': 'dark',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'default',
     'apple-mobile-web-app-title': 'Sara Silva',
     'application-name': 'Sara Silva - Projeção',
-    'msapplication-TileColor': '#3B82F6',
+    'msapplication-TileColor': '#0a0a0b',
     'msapplication-config': '/browserconfig.xml',
   },
   icons: {
@@ -113,9 +120,6 @@ export const metadata: Metadata = {
     shortcut: '/favicon.svg',
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-    other: [
-      { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#3B82F6' },
     ],
   },
   manifest: '/site.webmanifest',
@@ -129,83 +133,23 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={cn('scroll-smooth', 'font-sans', geist.variable)}
+      data-scroll-behavior="smooth"
+      className={cn(
+        'scroll-smooth',
+        'font-sans',
+        geist.variable,
+        geistMono.variable
+      )}
     >
       <head>
         {/* Meta tags adicionais para SEO */}
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=5"
+          content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover"
         />
         <meta
           name="robots"
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-        />
-
-        {/* Schema.org structured data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Person',
-              name: 'Sara Zandonai Silva',
-              jobTitle: 'Especialista em Projeção e Mídia',
-              description:
-                'Especialista em tecnologia de projeção para igrejas, cursos de Holyrics e mídia e comunicação',
-              url: 'https://sarazsilva.com',
-              image: 'https://sarazsilva.com/perfil.svg',
-              sameAs: [
-                'https://instagram.com/sarazsilva',
-                'https://tiktok.com/@sarazsilva',
-              ],
-              worksFor: {
-                '@type': 'Organization',
-                name: 'Sara Silva - Projeção',
-              },
-              knowsAbout: [
-                'Projeção para Igrejas',
-                'Holyrics',
-                'Mídia e Comunicação',
-                'Identidade Visual',
-                'Tecnologia de Projeção',
-              ],
-            }),
-          }}
-        />
-
-        {/* Schema.org para cursos */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Course',
-              name: 'Dominando o Holyrics',
-              description:
-                'Curso completo para dominar o software Holyrics e transformar a projeção da sua igreja',
-              provider: {
-                '@type': 'Person',
-                name: 'Sara Zandonai Silva',
-              },
-              courseMode: 'online',
-              inLanguage: 'pt-BR',
-              educationalLevel: 'intermediate',
-              teaches: [
-                'Projeção para Igrejas',
-                'Software Holyrics',
-                'Mídia e Comunicação',
-              ],
-            }),
-          }}
-        />
-
-        {/* Preconnect para performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
         />
 
         {/* DNS prefetch para recursos externos */}
@@ -241,15 +185,19 @@ export default function RootLayout({
         <meta name="format-detection" content="address=no" />
         <meta name="format-detection" content="email=no" />
       </head>
-      <body
-        className={`${mulish.className} bg-[#09090b] text-slate-50 antialiased`}
-      >
+      <body className="bg-ink font-sans text-paper antialiased">
+        <JsonLd id="site-graph" data={buildSiteGraph()} />
         <SpeedInsights />
         <Analytics />
 
         {children}
 
         <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_ID} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.addEventListener('click',function(event){var details=document.querySelector('nav details');if(!details||!details.open)return;var target=event.target;if(!(target instanceof Element))return;if(details.contains(target)){if(target.closest('a'))details.open=false;return;}details.open=false;});document.addEventListener('keydown',function(event){if(event.key!=='Escape')return;var details=document.querySelector('nav details');if(!details||!details.open)return;details.open=false;var summary=details.querySelector('summary');if(summary)summary.focus();});`,
+          }}
+        />
       </body>
     </html>
   );

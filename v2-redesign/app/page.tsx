@@ -1,60 +1,40 @@
-import { Network } from 'lucide-react';
-import About from './components/about';
-import BestSellerCard from './components/best-seller-card';
+import { buildCourseSchema } from '@/lib/geo/schemas';
+import CourseTrail from './components/course-trail';
 import Footer from './components/footer';
-import Header from './components/header';
-import HomeEntryCard from './components/home-entry-card';
-import Main from './components/main';
+import Hero from './components/hero';
+import JsonLd from './components/json-ld';
+import KitBand from './components/kit-band';
+import MaterialsBento from './components/materials-bento';
+import OfferTicket from './components/offer-ticket';
+import SiteNav from './components/site-nav';
+import Stats from './components/stats';
 import TopBanner from './components/top-banner';
+import TopicsMarquee from './components/topics-marquee';
+import BlackFridaySection from './components/black-friday-section';
 
 export default function LandingPage() {
   return (
-    <div className="overflow-hidden bg-[#09090b] font-sans text-slate-50 selection:bg-blue-500/30">
+    <div className="overflow-x-clip bg-ink font-sans text-paper selection:bg-lamp/30">
+      <JsonLd
+        id="course-schema"
+        data={{
+          '@context': 'https://schema.org',
+          ...buildCourseSchema(),
+        }}
+      />
       <TopBanner />
+      <SiteNav />
+      <BlackFridaySection />
 
-      {/* Header em tela inteira */}
-      <section className="flex min-h-[90svh] items-center">
-        <Header />
-      </section>
-
-      {/* Conteúdo principal */}
-      <div
-        id="main-content"
-        className="relative z-10 flex flex-col gap-20 pb-20"
-      >
-        {/* Main Offer Component */}
-        <div className="container relative z-20 mx-auto -mt-8 px-4 sm:-mt-12 md:-mt-20">
-          <BestSellerCard />
-        </div>
-
-        {/* Curriculum / What you will learn */}
-        <div className="container mx-auto px-4">
-          <About />
-        </div>
-
-        {/* Other Products */}
-        <div className="container mx-auto px-4">
-          <div className="mb-10 text-center">
-            <h2 className="mb-2 text-3xl font-bold text-white md:text-4xl">
-              Acelere Mais Sua Evolução
-            </h2>
-            <p className="text-slate-400">
-              Explore mais materiais e cursos para revolucionar a mídia da sua
-              igreja.
-            </p>
-          </div>
-          <div className="mb-6">
-            <HomeEntryCard
-              title="Kit Mídia Igreja"
-              description="Curadoria de equipamentos reais para rede, vídeo, retorno, automação e cenografia — organizado por prioridade para comprar sem errar a ordem."
-              href="/kit-midia-igreja"
-              icon={Network}
-              actionLabel="Acessar"
-            />
-          </div>
-          <Main />
-        </div>
-      </div>
+      <main>
+        <Hero />
+        <TopicsMarquee />
+        <Stats />
+        <CourseTrail />
+        <OfferTicket />
+        <MaterialsBento />
+        <KitBand />
+      </main>
 
       <Footer />
     </div>

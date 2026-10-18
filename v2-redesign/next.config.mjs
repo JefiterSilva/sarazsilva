@@ -5,6 +5,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Permite abrir o dev server por tunel ngrok (o subdominio muda a cada sessao)
+  allowedDevOrigins: ['*.ngrok-free.app', '*.ngrok-free.dev', '*.ngrok.io'],
   turbopack: {
     root: __dirname,
   },
@@ -37,6 +39,15 @@ const nextConfig = {
   async headers() {
     return [
       {
+        source: '/:path(llm.txt|llms.txt|llms-full.txt|pricing.md|robots.txt)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400, stale-while-revalidate=604800',
+          },
+        ],
+      },
+      {
         source: '/(.*)',
         headers: [
           {
@@ -51,10 +62,16 @@ const nextConfig = {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin',
           },
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
+          // Em dev o cache "immutable" prende CSS antigo no navegador e causa
+          // avisos falsos de layout (imagens com altura 0). So vale em producao.
+          ...(process.env.NODE_ENV === 'production'
+            ? [
+                {
+                  key: 'Cache-Control',
+                  value: 'public, max-age=31536000, immutable',
+                },
+              ]
+            : []),
         ],
       },
     ];

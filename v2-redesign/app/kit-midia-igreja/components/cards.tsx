@@ -1,8 +1,7 @@
-import Image from 'next/image';
+﻿import Image from 'next/image';
 
 import AffiliateLinkButton from '@/app/components/affiliate-link-button';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent } from '@/components/ui/card';
 import type { LucideIcon } from 'lucide-react';
 
 export type KitProduct = {
@@ -14,7 +13,6 @@ export type KitProduct = {
   summary: string;
   highlight: string;
   icon: LucideIcon;
-  accent: string;
   tag: string;
 };
 
@@ -31,75 +29,82 @@ type HeroStatCardProps = {
 
 export function HeroStatCard({ label, value, description }: HeroStatCardProps) {
   return (
-    <Card className="border-white/10 bg-white/5 backdrop-blur">
-      <CardContent className="p-5">
-        <p className="text-sm uppercase tracking-[0.22em] text-slate-400">
-          {label}
-        </p>
-        <p className="mt-3 text-2xl font-black text-white">{value}</p>
-        {description ? (
-          <p className="mt-1 text-sm text-slate-300">{description}</p>
-        ) : null}
-      </CardContent>
-    </Card>
+    <div className="rounded-card border border-seam bg-coal p-5">
+      <p className="label-mono">{label}</p>
+      <p className="mt-3 text-2xl font-semibold tracking-tight text-paper">
+        {value}
+      </p>
+      {description ? (
+        <p className="mt-1 text-sm text-mist">{description}</p>
+      ) : null}
+    </div>
   );
 }
 
 type ProductCardProps = {
   affiliateUrl: string;
   product: KitProduct;
+  priority?: boolean;
 };
 
-export function ProductCard({ affiliateUrl, product }: ProductCardProps) {
+export function ProductCard({
+  affiliateUrl,
+  product,
+  priority = false,
+}: ProductCardProps) {
   const Icon = product.icon;
 
   return (
-    <Card className="group flex h-full flex-col overflow-hidden rounded-md border border-white/10 bg-[#081023] transition-transform duration-300 hover:-translate-y-1 hover:border-cyan-400/30">
-      <div
-        className={`relative flex flex-col overflow-hidden border-b border-white/10 bg-gradient-to-br ${product.accent} p-6`}
-      >
-        <div className="absolute right-5 top-5 rounded-full border border-white/10 bg-white/10 p-3 text-white">
-          <Icon className="h-6 w-6" />
-        </div>
-        <div className="space-y-3">
-          <Badge className="w-fit border border-white/15 bg-white/10 text-slate-100">
-            {product.tag}
-          </Badge>
-          <div>
-            <p className="text-sm uppercase tracking-[0.2em] text-slate-300">
-              {product.category}
-            </p>
-            <h3 className="mt-2 max-w-[16rem] text-2xl font-black text-white">
-              {product.name}
-            </h3>
-          </div>
-        </div>
-
-        <div className="relative mt-5 h-64 overflow-hidden rounded-md border border-white/10 bg-white shadow-[0_20px_45px_rgba(2,12,32,0.28)] sm:h-72">
-          <div className="absolute inset-0 z-0 bg-slate-100/50" />
-          <div className="relative z-10 h-full w-full p-2">
-            <Image
-              src={product.image}
-              alt={product.name}
-              loading="lazy"
-              fill
-              quality={90}
-              className="box-border object-contain p-2"
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-            />
-          </div>
-        </div>
-
-        <p className="mt-4 max-w-[18rem] text-sm text-slate-200">
-          Captura manual da lista real para reforcar prova visual do produto
-          recomendado.
-        </p>
+    <article className="group flex h-full flex-col overflow-hidden rounded-card border border-seam bg-coal transition-[transform,border-color] duration-300 ease-out hover:border-mist motion-safe:hover:-translate-y-1">
+      {/* Painel claro: excecao documentada, fotos de produto tem fundo branco */}
+      <div className="relative h-60 shrink-0 overflow-hidden bg-paper sm:h-64">
+        <Image
+          src={product.image}
+          alt={product.name}
+          priority={priority}
+          loading={priority ? 'eager' : 'lazy'}
+          fill
+          className="box-border object-contain p-6 transition-transform duration-500 ease-out motion-safe:group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+        />
       </div>
 
-      <CardContent className="flex flex-1 flex-col gap-5 p-6">
-        <p className="flex-1 text-sm leading-7 text-slate-300">
+      <div className="flex flex-1 flex-col gap-5 p-6">
+        <div className="space-y-3">
+          <div className="flex items-center justify-between gap-3">
+            <Badge variant="outline">{product.tag}</Badge>
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-iron">
+              <Icon
+                className="size-5 text-lamp"
+                strokeWidth={1.5}
+                aria-hidden="true"
+              />
+            </span>
+          </div>
+          <div className="space-y-1">
+            <p className="label-mono">{product.category}</p>
+            <h4 className="text-xl leading-snug font-semibold tracking-tight text-paper">
+              {product.name}
+            </h4>
+          </div>
+        </div>
+
+        <p className="flex-1 text-sm leading-relaxed text-mist">
           {product.summary}
         </p>
+
+        {product.installment.includes('R$') ? (
+          <p className="font-mono text-lg font-semibold tracking-tight text-lamp">
+            {product.installment}
+          </p>
+        ) : (
+          <div className="space-y-1">
+            <p className="text-sm font-semibold text-paper">
+              Preço na lista do Mercado Livre
+            </p>
+            <p className="label-mono">{product.installment}</p>
+          </div>
+        )}
 
         <AffiliateLinkButton
           href={affiliateUrl}
@@ -108,11 +113,12 @@ export function ProductCard({ affiliateUrl, product }: ProductCardProps) {
           productName={product.name}
           target="_blank"
           rel="noopener noreferrer sponsored"
-          className="h-12 w-full rounded-2xl bg-cyan-400 text-base font-bold text-slate-950 hover:bg-cyan-300"
+          variant="outline"
+          className="h-12 w-full"
         >
-          Ver este item na lista afiliada
+          Comprar agora
         </AffiliateLinkButton>
-      </CardContent>
-    </Card>
+      </div>
+    </article>
   );
 }

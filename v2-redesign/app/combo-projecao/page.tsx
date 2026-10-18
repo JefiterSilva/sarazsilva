@@ -1,409 +1,165 @@
+import ConversationalFaq from '@/app/components/conversational-faq';
+import JsonLd from '@/app/components/json-ld';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import {
-  ArrowLeft,
-  BookOpen,
-  Check,
-  Clock,
-  ShieldCheck,
-  Star,
-  Zap,
-} from 'lucide-react';
-
+import { courseParts } from '@/lib/geo/curriculum';
+import { comboFaqs } from '@/lib/geo/faqs';
+import { buildCourseSchema } from '@/lib/geo/schemas';
+import { COMBO, PRODUCTS } from '@/lib/geo/site';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import { Reveal, RevealWords } from '../components/fx/reveal';
+import Footer from '../components/footer';
+import OfferTicket from '../components/offer-ticket';
+import SiteNav from '../components/site-nav';
+
+export const metadata: Metadata = {
+  title: 'Combo da Projeção no Holyrics',
+  description:
+    `Curso completo de Holyrics para igrejas: ${COMBO.lessons} aulas práticas, TV de retorno via rede, vMix, automação com mesa digital e acesso vitalício por R$ 84,00.`,
+  alternates: {
+    canonical: '/combo-projecao',
+  },
+  openGraph: {
+    title: 'Combo da Projeção no Holyrics | Sara Silva',
+    description:
+      'Aprenda Holyrics do zero ao avançado. Mais de 2.100 alunos, avaliação 5.0 e garantia de 7 dias.',
+    url: PRODUCTS.combo.url,
+    type: 'website',
+  },
+};
+
+const cursos = courseParts;
+
+const comboBenefits = [
+  `Acesso a todas as ${COMBO.lessons} aulas práticas`,
+  'Acesso vitalício e atualizações',
+  'Suporte direto para tirar dúvidas',
+  'Certificado de conclusão completo',
+];
+
 const ComboProjecaoPage = () => {
-  const cursoParte1 = {
-    titulo: 'Dominando o Holyrics 1',
-    progresso: '2/8 aulas concluídas',
-    cor: 'blue',
-    aulas: [
-      {
-        id: 1,
-        titulo:
-          'Aula 1 - Como adicionar música, editar temas e colocar fundos em movimento.',
-      },
-      {
-        id: 2,
-        titulo:
-          'Aula 2 - Inserir vídeos, imagens, áudios / Power Point e Anúncios.',
-      },
-
-      {
-        id: 3,
-        titulo:
-          'Aula 3 - Como colocar vários temas na mesma música e como deixar um tema padrão.',
-      },
-      {
-        id: 4,
-        titulo:
-          'Aula 4 - Como colocar fundo com letras personalizadas e configurar a letra como comentário.',
-      },
-      { id: 5, titulo: 'Aula 5 - Como organizar o culto dentro do Holyrics.' },
-      { id: 6, titulo: 'Aula 6 - Como inserir novas fontes no Holyrics.' },
-      {
-        id: 7,
-        titulo:
-          'Aula 7 - Nova atualização para fundos de letras personalizadas.',
-      },
-      {
-        id: 8,
-        titulo:
-          'Aula 8 - Criando uma contagem regressiva com próxima apresentação.',
-      },
-    ],
-  };
-
-  const cursoParte2 = {
-    titulo: 'Dominando o Holyrics 2',
-    progresso: '5/6 aulas concluídas',
-    cor: 'green',
-    aulas: [
-      {
-        id: 1,
-        titulo: 'Aula 1 - Como configurar a TV de retorno utilizando TV BOX.',
-      },
-      {
-        id: 2,
-        titulo:
-          'Aula 2 - Bíblia: ativando novas versões, editando letras e fundos, e outras configurações.',
-      },
-      {
-        id: 3,
-        titulo: 'Aula 3 - Utilizando o aplicativo do Holyrics para a projeção.',
-      },
-      { id: 4, titulo: 'Aula 4 - Configurando a Bíblia e Música BILÍNGUE.' },
-      { id: 5, titulo: 'Aula 5 - Letras Automáticas com mp3.' },
-      {
-        id: 6,
-        titulo:
-          'Automação de gatilhos pelo Holyrics com mesa digital, iluminação digital e Live pelo programa VMIX.',
-      },
-      {
-        id: 7,
-        titulo:
-          'Aula 7 - Configurando telas publica e retorno no preview do seu programa.',
-      },
-      {
-        id: 8,
-        titulo:
-          'Aula 8 - PAINEL DE COMUNICAÇÃO: editando tema, tamanho de fonte, cor do relogio, cronometro....',
-      },
-      {
-        id: 9,
-        titulo: 'Aula 9 - Criando gatilhos de automação com o Holyrics Action.',
-      },
-      {
-        id: 10,
-        titulo:
-          'Aula 10 - Automação do Holyrics com o Lumikit para troca de iluminação através da projeção.',
-      },
-      {
-        id: 11,
-        titulo: 'Aula 11 - Apresentações rápidas e atalho da bíblia.',
-      },
-      {
-        id: 12,
-        titulo:
-          'Aula 12 - Tarefas agendadas para criar rotina de projeção com dia e horario.',
-      },
-    ],
-  };
-
   return (
-    <div className="min-h-screen bg-[#09090b] font-sans text-slate-50 selection:bg-blue-500/30">
-      {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-slate-800 bg-[#09090b]/80 px-4 py-4 backdrop-blur-md">
-        <div className="mx-auto flex max-w-5xl items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <Link href="/">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="text-slate-400 hover:bg-slate-800 hover:text-white"
-              >
-                <ArrowLeft className="mr-2 h-5 w-5" />
-                Voltar
-              </Button>
-            </Link>
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-white">
-                Conteúdo dos Cursos
-              </h1>
-              <p className="text-sm text-slate-400">
-                Combo da Projeção no Holyrics
+    <div className="min-h-dvh overflow-x-clip bg-ink font-sans text-paper selection:bg-lamp/30">
+      <JsonLd
+        id="course-schema"
+        data={{
+          '@context': 'https://schema.org',
+          ...buildCourseSchema(),
+        }}
+      />
+      <SiteNav />
+
+      <main>
+        <section className="relative isolate overflow-hidden">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 -z-10 bg-beam"
+          />
+          <div className="mx-auto max-w-7xl space-y-6 px-4 pt-16 pb-12 sm:px-6 md:pt-20 md:pb-16 2xl:max-w-[1440px]">
+            <Reveal onMount y={12}>
+              <p className="label-mono text-lamp">Grade curricular completa</p>
+            </Reveal>
+            <h1 className="max-w-4xl text-[2.5rem] leading-[1.02] font-semibold tracking-[-0.04em] text-paper sm:text-6xl lg:text-7xl">
+              <RevealWords
+                onMount
+                delay={0.1}
+                text="Tudo o que você vai aprender"
+              />
+            </h1>
+            <Reveal onMount delay={0.4} y={16}>
+              <p className="max-w-[52ch] text-lg leading-relaxed text-mist">
+                Conheça o conteúdo detalhado de cada módulo do curso e descubra
+                como vamos transformar a projeção da sua igreja.
               </p>
-            </div>
+            </Reveal>
           </div>
-        </div>
-      </header>
+        </section>
 
-      <main className="mx-auto flex max-w-5xl flex-col gap-12 px-4 py-12">
-        {/* Header Title */}
-        <div className="mb-16 space-y-4 text-center">
-          <Badge className="border border-blue-500/20 bg-blue-500/10 px-4 py-1.5 text-sm uppercase tracking-wider text-blue-400">
-            Grade Curricular Completa
-          </Badge>
-          <h2 className="text-4xl font-black tracking-tight text-white md:text-5xl">
-            Tudo o que você vai{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
-              aprender
-            </span>
-          </h2>
-          <p className="mx-auto max-w-2xl text-lg text-slate-400">
-            Conheça o conteúdo detalhado de cada módulo do curso e descubra como
-            vamos transformar a projeção da sua igreja.
-          </p>
-        </div>
-
-        {/* Cursos em Destaque (Parte 1 e 2) */}
-        <div className="mb-24 grid gap-8 md:grid-cols-2">
-          {/* Card do Curso Parte 1 */}
-          <Card className="group relative overflow-hidden border border-slate-800 bg-slate-900/50 transition-all duration-300 hover:bg-slate-800/50">
-            <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-blue-600 to-blue-400"></div>
-            <div className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-blue-500/10 blur-3xl"></div>
-
-            <CardHeader className="relative border-b border-slate-800/50 pb-6">
-              <div className="flex items-center space-x-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-blue-500/20 bg-blue-500/10">
-                  <BookOpen className="h-7 w-7 text-blue-400" />
+        {cursos.map((curso) => (
+          <section
+            key={curso.titulo}
+            className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 md:py-16 2xl:max-w-[1440px]"
+          >
+            <div className="grid items-start gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+              <Reveal className="space-y-5 rounded-card border border-seam bg-coal p-6 sm:p-8 lg:sticky lg:top-28">
+                <Badge variant="lamp">{curso.parte}</Badge>
+                <div className="space-y-2">
+                  <h2 className="text-3xl leading-[1.05] font-semibold tracking-[-0.03em] text-paper md:text-4xl">
+                    {curso.titulo}
+                  </h2>
+                  <p className="text-sm text-mist">{curso.subtitulo}</p>
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">
-                    {cursoParte1.titulo}
-                  </h3>
-                  <p className="mt-1 text-sm font-medium text-blue-400">
-                    Do Zero ao Intermediário • 8 Aulas Práticas
+
+                <div className="space-y-1 border-t border-seam pt-5">
+                  <p className="text-sm font-medium text-paper">
+                    Prefere comprar separado?
+                  </p>
+                  <p className="text-sm text-mist">{curso.nivel}</p>
+                  <p className="text-4xl font-semibold tracking-[-0.04em] text-paper">
+                    {curso.preco}
                   </p>
                 </div>
-              </div>
-            </CardHeader>
 
-            <CardContent className="relative pt-6">
-              <div className="space-y-4">
-                <h4 className="text-sm font-bold uppercase tracking-widest text-white md:text-lg">
-                  Grade de Aulas:
-                </h4>
-                <ul className="space-y-3 text-sm md:text-lg">
-                  {cursoParte1.aulas.map((aula, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start space-x-3 text-slate-300"
-                    >
-                      <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-slate-700 bg-slate-800 text-[10px] font-bold text-slate-400 md:text-lg">
-                        {idx + 1}
-                      </div>
-                      <span className="text-sm leading-relaxed md:text-lg">
-                        {aula.titulo}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Card do Curso Parte 2 */}
-          <Card className="group relative overflow-hidden border border-slate-800 bg-slate-900/50 transition-all duration-300 hover:bg-slate-800/50">
-            <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-green-600 to-green-400"></div>
-            <div className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-green-500/10 blur-3xl"></div>
-
-            <CardHeader className="relative border-b border-slate-800/50 pb-6">
-              <div className="flex items-center space-x-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-green-500/20 bg-green-500/10">
-                  <Zap className="h-7 w-7 text-green-400" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">
-                    {cursoParte2.titulo}
-                  </h3>
-                  <p className="mt-1 text-sm font-medium text-green-400">
-                    Do Zero ao Avançado • 12 Aulas Práticas
-                  </p>
-                </div>
-              </div>
-            </CardHeader>
-
-            <CardContent className="relative pt-6">
-              <div className="space-y-4">
-                <h4 className="text-sm font-bold uppercase tracking-widest text-white md:text-lg">
-                  Grade de Aulas:
-                </h4>
-                <ul className="space-y-3">
-                  {cursoParte2.aulas.map((aula, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start space-x-3 text-slate-300"
-                    >
-                      <div className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-slate-700 bg-slate-800 text-[10px] font-bold text-slate-400 md:h-6 md:w-6 md:text-lg">
-                        {idx + 1}
-                      </div>
-                      <span className="text-sm leading-relaxed md:text-lg">
-                        {aula.titulo}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* MAIN OFFER - COMBO */}
-        <div className="relative mb-24 mt-4 md:mt-16">
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/20 to-green-600/20 blur-3xl"></div>
-
-          <Card className="relative overflow-hidden rounded-3xl border border-slate-700 bg-slate-900/80 shadow-2xl backdrop-blur-xl">
-            <div className="absolute left-1/2 top-0 h-[2px] w-[60%] -translate-x-1/2 bg-gradient-to-r from-transparent via-green-500 to-transparent"></div>
-
-            <div className="absolute right-0 top-0 z-20">
-              <div className="flex items-center gap-1 rounded-bl-xl bg-red-500 px-4 py-2 text-xs font-bold text-white shadow-lg">
-                <Clock className="h-3 w-3" /> Melhor condição disponível!
-              </div>
-            </div>
-
-            <div className="mt-10 grid gap-0 md:grid-cols-5">
-              {/* Info Area */}
-              <div className="border-b border-slate-800 p-8 md:col-span-3 md:border-b-0 md:border-r md:p-10">
-                <Badge className="mb-4 border border-green-500/20 bg-green-500/10 text-green-400">
-                  <Star className="mr-1 h-3 w-3 fill-current" /> MELHOR
-                  CUSTO-BENEFÍCIO
-                </Badge>
-
-                <h3 className="mb-2 text-3xl font-black text-white md:text-4xl">
-                  COMBO COMPLETO HOLYRICS
-                </h3>
-                <p className="mb-8 text-lg text-slate-400">
-                  Leve a <strong>Parte 1 + Parte 2</strong> com um super
-                  desconto e domine a projeção do básico ao avançado.
-                </p>
-
-                <div className="space-y-4">
-                  {[
-                    {
-                      icon: Check,
-                      text: 'Acesso a todas as 16 aulas práticas',
-                    },
-                    {
-                      icon: ShieldCheck,
-                      text: 'Acesso vitalício e atualizações',
-                    },
-                    { icon: Star, text: 'Suporte direto para tirar dúvidas' },
-                    { icon: Zap, text: 'Certificado de conclusão completo' },
-                  ].map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center space-x-3 text-slate-200"
-                    >
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-green-500/10">
-                        <item.icon className="h-4 w-4 text-green-400" />
-                      </div>
-                      <span className="font-medium">{item.text}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Pricing Area */}
-              <div className="flex flex-col items-center justify-center bg-slate-950/50 p-8 text-center md:col-span-2 md:p-10">
-                <div className="mb-2 flex items-start justify-center gap-1">
-                  <span className="mt-2 text-2xl font-bold text-green-400">
-                    R$
-                  </span>
-                  <span className="text-6xl font-black tracking-tighter text-green-400">
-                    84
-                  </span>
-                  <span className="mt-2 text-2xl font-bold text-green-400">
-                    ,00
-                  </span>
-                </div>
-                <p className="text-center text-lg text-slate-400 line-through">
-                  De R$ 99,80 por apenas
-                </p>
-
-                <Button
-                  asChild
-                  size="lg"
-                  className="h-14 w-full rounded-xl bg-green-500 text-lg font-bold text-white shadow-[0_0_30px_-5px_rgba(34,197,94,0.4)] transition-all hover:scale-105 hover:bg-green-600"
-                >
-                  <Link
-                    href="https://pay.hotmart.com/S94768202Q?bid=1722861105152"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    QUERO O COMBO AGORA
+                <Button asChild variant="outline" className="w-full">
+                  <Link href={curso.href} target="_blank">
+                    {curso.cta}
                   </Link>
                 </Button>
-                <p className="mt-4 flex items-center justify-center gap-1 text-xs text-white">
-                  <ShieldCheck className="h-3 w-3" /> Garantia incondicional de
-                  7 dias
-                </p>
-              </div>
-            </div>
-          </Card>
-        </div>
+              </Reveal>
 
-        {/* Comprar Separado */}
-        <div className="mb-8 text-center">
-          <h3 className="mb-2 text-2xl font-bold text-white">
-            Prefere comprar separado?
-          </h3>
-          <p className="text-slate-400">
-            Você também pode adquirir os módulos individualmente.
-          </p>
-        </div>
-
-        <div className="mx-auto grid max-w-3xl gap-6 md:grid-cols-2">
-          {/* Option 1 */}
-          <Card className="flex flex-col justify-between border border-slate-800 bg-slate-900/30 p-6 transition-colors hover:border-blue-500/50">
-            <div>
-              <h4 className="mb-1 text-xl font-bold text-white">
-                Apenas Parte 1
-              </h4>
-              <p className="mb-4 text-sm text-white">Básico ao Intermediário</p>
-              <p className="mb-6 text-3xl font-bold text-blue-400">R$ 49,90</p>
+              <ol className="grid gap-3 sm:grid-cols-2">
+                {curso.aulas.map((aula, index) => (
+                  <li key={aula.title}>
+                    <Reveal
+                      delay={(index % 2) * 0.05}
+                      y={20}
+                      className="h-full"
+                    >
+                      <div className="flex h-full gap-4 rounded-xl border border-seam bg-coal p-5 transition-colors duration-200 hover:border-mist hover:bg-iron">
+                        <span className="font-mono text-2xl leading-none font-medium text-lamp">
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                        <span className="text-sm leading-relaxed text-paper">
+                          {aula.title}
+                        </span>
+                      </div>
+                    </Reveal>
+                  </li>
+                ))}
+              </ol>
             </div>
-            <Button
-              asChild
-              variant="outline"
-              className="w-full border-slate-700 hover:border-blue-500/50 hover:bg-blue-500/10 hover:text-blue-400"
-            >
-              <Link
-                href="https://hotmart.com/pt-br/marketplace/produtos/dominando-o-holyrics-parte-1/Q93610850I"
-                target="_blank"
-              >
-                Comprar Parte 1
-              </Link>
-            </Button>
-          </Card>
+          </section>
+        ))}
 
-          {/* Option 2 */}
-          <Card className="flex flex-col justify-between border border-slate-800 bg-slate-900/30 p-6 transition-colors hover:border-green-500/50">
-            <div>
-              <h4 className="mb-1 text-xl font-bold text-white">
-                Apenas Parte 2
-              </h4>
-              <p className="mb-4 text-sm text-white">
-                Intermediário ao Avançado
-              </p>
-              <p className="mb-6 text-3xl font-bold text-green-400">R$ 59,90</p>
-            </div>
-            <Button
-              asChild
-              variant="outline"
-              className="w-full border-slate-700 hover:border-green-500/50 hover:bg-green-500/10 hover:text-green-400"
-            >
-              <Link
-                href="https://hotmart.com/pt-br/marketplace/produtos/dominando-o-holyrics-parte-2/A94024412O?sck=HOTMART_SITE&search=2042cdc2-7353-42c4-b28c-55373570108e&hotfeature=33"
-                target="_blank"
-              >
-                Comprar Parte 2
-              </Link>
-            </Button>
-          </Card>
-        </div>
+        <OfferTicket
+          id="combo"
+          title="Combo completo Holyrics"
+          badgeLabel="Melhor custo-benefício"
+          ctaLabel="Quero o combo agora"
+          showGradeLink={false}
+          benefits={comboBenefits}
+          description={
+            <>
+              Leve a{' '}
+              <strong className="font-semibold text-paper">
+                Parte 1 + Parte 2
+              </strong>{' '}
+              com um super desconto e domine a projeção do básico ao avançado.
+            </>
+          }
+        />
+
+        <ConversationalFaq
+          heading="Perguntas que a equipe de mídia mais faz"
+          intro="Respostas diretas sobre Holyrics, TV de retorno, preço do combo e o que cada parte do curso ensina."
+          items={comboFaqs}
+          pageUrl={PRODUCTS.combo.url}
+        />
       </main>
+
+      <Footer />
     </div>
   );
 };
