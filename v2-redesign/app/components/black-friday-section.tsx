@@ -10,11 +10,10 @@ import { useState, useSyncExternalStore, type ReactNode } from 'react';
 const WHATSAPP_GRUPO =
   'https://chat.whatsapp.com/HLgqPApdx3e6C9qtJPHBu4?s=cl&p=i&mlu=4&ilr=4';
 
-const HOTMART_PACOTAO =
-  'https://pay.hotmart.com/Q102640493L?bid=1761612398571';
+const HOTMART_PACOTAO = 'https://pay.hotmart.com/Q102640493L?bid=1761612398571';
 
-/** Aquecimento no dia 25. A venda abre no dia 6 de novembro. */
-const TEASER_START = '2026-10-25';
+/** Aquecimento no dia 19. A venda abre no dia 6 de novembro. */
+const TEASER_START = '2026-10-19';
 const SALE_START = '2026-11-06';
 
 const FROM_CENTS = 37070;
@@ -76,22 +75,22 @@ const cents = (TO_CENTS % 100).toString().padStart(2, '0');
 function PriceAnchor() {
   return (
     <div className="space-y-3">
-      <p className="text-lg text-mist">
-        <span className="line-through decoration-mist">
+      <p className="text-mist text-lg">
+        <span className="decoration-mist line-through">
           De {formatBrl(FROM_CENTS)}
         </span>
       </p>
-      <p className="flex items-baseline gap-1 text-lamp tabular-nums">
+      <p className="text-lamp flex items-baseline gap-1 tabular-nums">
         <span className="text-2xl font-semibold">R$</span>
-        <span className="text-6xl leading-none font-semibold tracking-[-0.04em] sm:text-7xl">
+        <span className="text-6xl font-semibold leading-none tracking-[-0.04em] sm:text-7xl">
           {reais}
         </span>
         <span className="text-2xl font-semibold">,{cents}</span>
       </p>
-      <p className="font-mono text-xs tracking-[0.08em] text-paper uppercase">
+      <p className="text-paper font-mono text-xs uppercase tracking-[0.08em]">
         {formatBrl(SAVINGS_CENTS)} a menos
       </p>
-      <span aria-hidden="true" className="mt-1 block h-px w-16 bg-lamp" />
+      <span aria-hidden="true" className="bg-lamp mt-1 block h-px w-16" />
     </div>
   );
 }
@@ -116,20 +115,20 @@ function CampaignDialog({
       <DialogPortal>
         <DialogOverlay className="bg-ink/80" />
         <DialogPrimitive.Content
-          className={`fixed top-[max(0.75rem,env(safe-area-inset-top))] left-1/2 z-50 max-h-[calc(100dvh-max(0.75rem,env(safe-area-inset-top))-max(0.75rem,env(safe-area-inset-bottom)))] -translate-x-1/2 overflow-y-auto overscroll-contain rounded-card border border-seam bg-coal text-paper shadow-[0_24px_48px_-12px_rgb(0_0_0/0.55)] outline-none duration-200 [scrollbar-color:var(--color-seam)_transparent] [scrollbar-width:thin] data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0 motion-reduce:animate-none ${widthClass}`}
+          className={`rounded-card border-seam bg-coal text-paper data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0 fixed left-1/2 top-[max(0.75rem,env(safe-area-inset-top))] z-50 max-h-[calc(100dvh-max(0.75rem,env(safe-area-inset-top))-max(0.75rem,env(safe-area-inset-bottom)))] -translate-x-1/2 overflow-y-auto overscroll-contain border shadow-[0_24px_48px_-12px_rgb(0_0_0/0.55)] outline-none duration-200 [scrollbar-color:var(--color-seam)_transparent] [scrollbar-width:thin] motion-reduce:animate-none ${widthClass}`}
         >
           <div className="pointer-events-none sticky top-0 z-10 h-0">
-            <DialogPrimitive.Close className="pointer-events-auto absolute top-4 right-4 flex size-11 items-center justify-center rounded-full bg-iron text-paper transition-[background-color,transform] duration-200 hover:bg-seam focus-visible:ring-2 focus-visible:ring-lamp focus-visible:ring-offset-2 focus-visible:ring-offset-coal focus-visible:outline-none active:scale-[0.98]">
+            <DialogPrimitive.Close className="bg-iron text-paper hover:bg-seam focus-visible:ring-lamp focus-visible:ring-offset-coal pointer-events-auto absolute right-4 top-4 flex size-11 items-center justify-center rounded-full transition-[background-color,transform] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.98]">
               <X className="size-4" strokeWidth={1.75} aria-hidden="true" />
               <span className="sr-only">Fechar</span>
             </DialogPrimitive.Close>
           </div>
 
-          <div className="space-y-4 border-b border-seam p-6 pr-16 sm:p-10 sm:pr-20">
-            <DialogPrimitive.Title className="max-w-[16ch] text-3xl leading-[1.02] font-semibold tracking-[-0.04em] text-balance text-paper sm:text-4xl lg:text-5xl">
+          <div className="border-seam space-y-4 border-b p-6 pr-16 sm:p-10 sm:pr-20">
+            <DialogPrimitive.Title className="text-paper max-w-[16ch] text-balance text-3xl font-semibold leading-[1.02] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
               {title}
             </DialogPrimitive.Title>
-            <DialogPrimitive.Description className="max-w-[46ch] text-base leading-relaxed text-mist">
+            <DialogPrimitive.Description className="text-mist max-w-[46ch] text-base leading-relaxed">
               {description}
             </DialogPrimitive.Description>
           </div>
@@ -142,14 +141,14 @@ function CampaignDialog({
 
 /**
  * Dois cards da mesma campanha.
- * Até 24/10 o modal fica fechado. De 25/10 a 05/11 ele só leva ao grupo.
+ * Até 18/10 o modal fica fechado. De 19/10 a 05/11 ele só leva ao grupo.
  * A partir de 06/11 o card vende o pacotão no link direto.
  */
 const BlackFridaySection = () => {
   const preview = useSyncExternalStore(
     subscribePreview,
     previewPhase,
-    () => null,
+    () => null
   );
   const phase = preview ?? resolvePhase();
   const [open, setOpen] = useState(true);
@@ -166,7 +165,7 @@ const BlackFridaySection = () => {
         description="Ela chega dia 6 de novembro. Tudo por R$ 97,90. O link ainda não abre para todo mundo: entra no grupo para não ficar de fora."
       >
         <div className="flex flex-col gap-8 p-6 sm:p-10">
-          <p className="font-mono text-xs tracking-[0.08em] text-lamp uppercase">
+          <p className="text-lamp font-mono text-xs uppercase tracking-[0.08em]">
             6 de novembro
           </p>
           <PriceAnchor />
@@ -181,9 +180,6 @@ const BlackFridaySection = () => {
                 Entrar no grupo exclusivo
               </Link>
             </Button>
-            <p className="text-sm leading-relaxed text-mist">
-              No dia 6 o pacotão abre aqui no site.
-            </p>
           </div>
         </div>
       </CampaignDialog>
@@ -199,15 +195,15 @@ const BlackFridaySection = () => {
       description="Agora você pode ter acesso a todos os meus conteúdos em um só lugar, pagamento único e acesso vitalício, ou seja, sem fim."
     >
       <div className="grid lg:grid-cols-[minmax(0,20rem)_1fr]">
-        <div className="flex flex-col gap-8 border-b border-seam p-6 sm:p-10 lg:border-r lg:border-b-0">
+        <div className="border-seam flex flex-col gap-8 border-b p-6 sm:p-10 lg:border-b-0 lg:border-r">
           <PriceAnchor />
           <div className="space-y-4">
-            <p className="text-sm leading-relaxed text-paper">
+            <p className="text-paper text-sm leading-relaxed">
               Pagamento único. Acesso vitalício.
             </p>
-            <p className="flex items-center gap-2 text-sm text-mist">
+            <p className="text-mist flex items-center gap-2 text-sm">
               <Clock
-                className="size-4 shrink-0 text-lamp"
+                className="text-lamp size-4 shrink-0"
                 strokeWidth={1.5}
                 aria-hidden="true"
               />
@@ -223,7 +219,7 @@ const BlackFridaySection = () => {
                 Garantir por {formatBrl(TO_CENTS)}
               </Link>
             </Button>
-            <p className="text-sm leading-relaxed text-mist">
+            <p className="text-mist text-sm leading-relaxed">
               Acesso imediato. Conteúdo vitalício. Atualizações sem custo
               adicional.
             </p>
@@ -232,24 +228,24 @@ const BlackFridaySection = () => {
 
         <div className="flex flex-col gap-6 p-6 sm:p-10">
           <div className="space-y-3">
-            <h3 className="text-2xl leading-[1.05] font-semibold tracking-[-0.04em] text-balance text-paper">
+            <h3 className="text-paper text-balance text-2xl font-semibold leading-[1.05] tracking-[-0.04em]">
               O que você vai receber nesse Pacotão? TUDO!
             </h3>
-            <p className="max-w-[52ch] text-base leading-relaxed text-mist">
+            <p className="text-mist max-w-[52ch] text-base leading-relaxed">
               Todos os cursos, packs e materiais em um só pacote.
             </p>
           </div>
           <ul className="grid gap-x-8 gap-y-4 md:grid-cols-2">
             {INCLUDED.map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-md bg-iron">
+                <span className="bg-iron mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-md">
                   <Check
-                    className="size-4 text-lamp"
+                    className="text-lamp size-4"
                     strokeWidth={1.5}
                     aria-hidden="true"
                   />
                 </span>
-                <span className="text-sm leading-relaxed text-paper">
+                <span className="text-paper text-sm leading-relaxed">
                   {item}
                 </span>
               </li>
