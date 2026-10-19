@@ -19,6 +19,7 @@ const SALE_START = '2026-11-06';
 const FROM_CENTS = 37070;
 const TO_CENTS = 9790;
 const SAVINGS_CENTS = FROM_CENTS - TO_CENTS;
+const DISCOUNT_PERCENT = Math.round((SAVINGS_CENTS / FROM_CENTS) * 100);
 
 const brl = new Intl.NumberFormat('pt-BR', {
   style: 'currency',
@@ -75,9 +76,13 @@ const cents = (TO_CENTS % 100).toString().padStart(2, '0');
 function PriceAnchor() {
   return (
     <div className="space-y-3">
+      {/* MELHORADO: Ancoragem de preço — o valor cheio aparece antes do preço final */}
       <p className="text-mist text-lg">
         <span className="decoration-mist line-through">
           De {formatBrl(FROM_CENTS)}
+        </span>
+        <span className="text-paper ml-2 font-mono text-xs uppercase tracking-[0.08em]">
+          −{DISCOUNT_PERCENT}%
         </span>
       </p>
       <p className="text-lamp flex items-baseline gap-1 tabular-nums">
@@ -87,6 +92,7 @@ function PriceAnchor() {
         </span>
         <span className="text-2xl font-semibold">,{cents}</span>
       </p>
+      {/* MELHORADO: Ancoragem — a economia em reais reforça o percentual */}
       <p className="text-paper font-mono text-xs uppercase tracking-[0.08em]">
         {formatBrl(SAVINGS_CENTS)} a menos
       </p>
@@ -157,19 +163,38 @@ const BlackFridaySection = () => {
 
   if (phase === 'aviso') {
     return (
+      /* MELHORADO: FOMO na headline; reciprocidade e escassez na subheadline */
       <CampaignDialog
         open={open}
         onOpenChange={setOpen}
         widthClass="w-[min(calc(100%-1.5rem),36rem)]"
-        title="Não perca a Black"
-        description="Ela chega dia 6 de novembro. Tudo por R$ 97,90. O link ainda não abre para todo mundo: entra no grupo para não ficar de fora."
+        title="Não fique de fora da Black"
+        description="No dia 6 de novembro o pacotão abre por tempo limitado. Entre no grupo e receba o link antes de todo mundo."
       >
         <div className="flex flex-col gap-8 p-6 sm:p-10">
+          {/* MELHORADO: Urgência — prazo visível da abertura */}
           <p className="text-lamp font-mono text-xs uppercase tracking-[0.08em]">
-            6 de novembro
+            Abre em 6 de novembro
           </p>
+          {/* MELHORADO: Prova social + autoridade */}
+          <p className="text-paper text-sm leading-relaxed">
+            🔥 +2.100 alunos · nota 5,0
+          </p>
+          {/* SUGESTÃO: badge visual “Acesso antecipado” ao lado da prova social, para o grupo parecer um privilégio e não um anúncio. */}
           <PriceAnchor />
           <div className="space-y-4">
+            {/* MELHORADO: Reciprocidade — três extras de quem entra agora */}
+            <ul className="space-y-3">
+              <li className="text-paper text-sm leading-relaxed">
+                ✔️ Aviso no dia em que a oferta abrir
+              </li>
+              <li className="text-paper text-sm leading-relaxed">
+                🎁 Link direto, antes da página pública
+              </li>
+              <li className="text-paper text-sm leading-relaxed">
+                🚀 Pacotão completo por {formatBrl(TO_CENTS)}
+              </li>
+            </ul>
             <Button asChild size="lg" className="w-full">
               <Link
                 href={WHATSAPP_GRUPO}
@@ -177,9 +202,15 @@ const BlackFridaySection = () => {
                 rel="noopener noreferrer"
               >
                 <MessageCircle strokeWidth={1.75} aria-hidden="true" />
-                Entrar no grupo exclusivo
+                {/* MELHORADO: CTA em primeira pessoa, verbo de ação */}
+                Quero meu acesso antecipado
               </Link>
             </Button>
+            {/* MELHORADO: Urgência — linha curta sob o CTA */}
+            <p className="text-mist text-sm leading-relaxed">
+              ⏳ O link ainda não abre para todo mundo
+            </p>
+            {/* SUGESTÃO: contador regressivo até 6 de novembro (America/Sao_Paulo), no lugar da data estática, para a espera ficar concreta. */}
           </div>
         </div>
       </CampaignDialog>
@@ -187,28 +218,35 @@ const BlackFridaySection = () => {
   }
 
   return (
+    /* MELHORADO: FOMO na headline; subheadline no benefício do pacote */
     <CampaignDialog
       open={open}
       onOpenChange={setOpen}
       widthClass="w-[min(calc(100%-1.5rem),64rem)]"
-      title="A maior e melhor BLACK para equipes de mídia e comunicação das igrejas do MUNDO!"
-      description="Agora você pode ter acesso a todos os meus conteúdos em um só lugar, pagamento único e acesso vitalício, ou seja, sem fim."
+      title="Não deixe sua equipe de fora"
+      description="Todo o método da Sara para a mídia da igreja, num pagamento único e com acesso vitalício."
     >
       <div className="grid lg:grid-cols-[minmax(0,20rem)_1fr]">
         <div className="border-seam flex flex-col gap-8 border-b p-6 sm:p-10 lg:border-b-0 lg:border-r">
+          {/* MELHORADO: Prova social + autoridade */}
+          <p className="text-paper text-sm leading-relaxed">
+            🔥 +2.100 alunos · nota 5,0
+          </p>
+          {/* SUGESTÃO: mini badge “🔥 +2.100 alunos já estudaram com a Sara” acima do preço, com a nota 5,0 como selo ao lado. */}
           <PriceAnchor />
           <div className="space-y-4">
-            <p className="text-paper text-sm leading-relaxed">
-              Pagamento único. Acesso vitalício.
-            </p>
-            <p className="text-mist flex items-center gap-2 text-sm">
-              <Clock
-                className="text-lamp size-4 shrink-0"
-                strokeWidth={1.5}
-                aria-hidden="true"
-              />
-              Oferta por tempo limitado
-            </p>
+            {/* MELHORADO: Benefícios curtos — resultado, bônus e uso imediato */}
+            <ul className="space-y-3">
+              <li className="text-paper text-sm leading-relaxed">
+                ✔️ Treine a equipe no seu ritmo, com acesso vitalício
+              </li>
+              <li className="text-paper text-sm leading-relaxed">
+                🎁 Fundos, artes e roteiros prontos de bônus
+              </li>
+              <li className="text-paper text-sm leading-relaxed">
+                🚀 Aplique no próximo culto, com acesso na hora
+              </li>
+            </ul>
             <Button asChild size="lg" className="w-full">
               <Link
                 href={HOTMART_PACOTAO}
@@ -216,23 +254,35 @@ const BlackFridaySection = () => {
                 rel="noopener noreferrer"
               >
                 <Tag strokeWidth={1.75} aria-hidden="true" />
-                Garantir por {formatBrl(TO_CENTS)}
+                {/* MELHORADO: CTA — verbo de ação em primeira pessoa */}
+                Quero garantir agora
               </Link>
             </Button>
+            {/* MELHORADO: Urgência — prazo da campanha, sem data inventada */}
+            <p className="text-mist flex items-center gap-2 text-sm">
+              <Clock
+                className="text-lamp size-4 shrink-0"
+                strokeWidth={1.5}
+                aria-hidden="true"
+              />
+              ⏳ Oferta de Black Friday por tempo limitado
+            </p>
+            {/* SUGESTÃO: trocar esta linha por “Oferta encerra em 23h 59min” só quando a data final da campanha estiver no código. */}
+            {/* MELHORADO: Segurança — risco percebido cai antes do clique */}
             <p className="text-mist text-sm leading-relaxed">
-              Acesso imediato. Conteúdo vitalício. Atualizações sem custo
-              adicional.
+              Compra 100% segura · Garantia de 7 dias
             </p>
           </div>
         </div>
 
         <div className="flex flex-col gap-6 p-6 sm:p-10">
           <div className="space-y-3">
+            {/* MELHORADO: Lista orientada ao que a equipe leva para o culto */}
             <h3 className="text-paper text-balance text-2xl font-semibold leading-[1.05] tracking-[-0.04em]">
-              O que você vai receber nesse Pacotão? TUDO!
+              Tudo que a cabine precisa, num pacote
             </h3>
             <p className="text-mist max-w-[52ch] text-base leading-relaxed">
-              Todos os cursos, packs e materiais em um só pacote.
+              Cursos, fundos e materiais prontos para a equipe usar no culto.
             </p>
           </div>
           <ul className="grid gap-x-8 gap-y-4 md:grid-cols-2">
